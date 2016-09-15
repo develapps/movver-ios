@@ -22,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         self.router = Router()
         
-        self.window?.rootViewController = self.router?.movver_VC_Instantiate(model: nil,
+       let vc = self.router?.movver_VC_Instantiate(model: nil,
                                                                              storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
                                                                              identifier: "ViewController",
                                                                              previousRouter: nil)
-        
+        let nv = UINavigationController()
+        nv.addChildViewController(vc!)
+          self.window?.rootViewController = nv
         self.window?.makeKeyAndVisible()
 
         

@@ -22,6 +22,11 @@ class ViewModel: MOVVER_VM {
         }
     }
     override func movver_RT_Call(event: Any) {
-        
+        let eventRT:RouterToViewModelEvents = event as! RouterToViewModelEvents
+        switch eventRT {
+        case .didShowAlert:
+            self.delegateView?.movver_VM_Call(event: ViewModelToViewControllerEvents.changeButtonTitle("Alerted!"))
+        }
+
     }
 }

@@ -15,11 +15,15 @@ enum ViewControllerEvents {
 }
 
 enum ViewModelToViewControllerEvents{
-    case changeButtonTitle
+    case changeButtonTitle(String)
 }
 
 enum ViewModelToRouterEvents {
     case showAlert(String)
     case goToCollectionView
     case goToTableView
+}
+
+enum RouterToViewModelEvents{
+    case didShowAlert
 }

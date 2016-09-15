@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -23,7 +23,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAS-m8-HhG">
                                         <state key="normal" title="Alert"/>
                                         <connections>
-                                            <action selector="didPressAlert:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XBt-oZ-W5y"/>
+                                            <action selector="didPressAlert:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Nbc-WA-jP1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-gF-yXk">
@@ -47,9 +47,56 @@
                             <constraint firstItem="wKb-tE-cW2" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="cgE-Ke-z4R"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GAi-ji-uHi"/>
+                    <connections>
+                        <outlet property="aButton" destination="uAS-m8-HhG" id="Zc6-IW-loo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="975.20000000000005" y="91.304347826086968"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="x9U-PW-IYa">
+            <objects>
+                <viewController storyboardIdentifier="TableViewController" id="GaN-Gp-fAd" customClass="TableViewController" customModule="movver_ios_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HcZ-1l-h5S"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Ns-VY-8eT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L9C-wY-ejH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uqu-nV-Ss5">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovverTableCell" id="r5e-ch-Fd4" customClass="MovverTableCell" customModule="movver_ios_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r5e-ch-Fd4" id="Tce-va-NlG">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uqu-nV-Ss5" secondAttribute="trailing" id="DIr-gw-hw3"/>
+                            <constraint firstItem="uqu-nV-Ss5" firstAttribute="top" secondItem="HcZ-1l-h5S" secondAttribute="bottom" id="DUV-dD-P8E"/>
+                            <constraint firstItem="5Ns-VY-8eT" firstAttribute="top" secondItem="uqu-nV-Ss5" secondAttribute="bottom" id="nxA-OF-2J2"/>
+                            <constraint firstItem="uqu-nV-Ss5" firstAttribute="leading" secondItem="L9C-wY-ejH" secondAttribute="leading" id="xZb-3c-uda"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="uqu-nV-Ss5" id="3o2-CL-lUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzP-kb-dG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904.8" y="-249.62518740629687"/>
         </scene>
     </scenes>
 </document>

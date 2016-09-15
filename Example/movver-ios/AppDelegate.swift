@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import movver_ios
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var router: Router?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        self.router = Router()
+        
+        self.window?.rootViewController = self.router?.movver_VC_Instantiate(model: nil,
+                                                                             storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
+                                                                             identifier: "ViewController",
+                                                                             previousRouter: nil)
+        
+        self.window?.makeKeyAndVisible()
+
+        
         return true
     }
 

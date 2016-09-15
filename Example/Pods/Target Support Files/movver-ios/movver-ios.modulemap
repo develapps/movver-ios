@@ -1,0 +1,6 @@
+framework module movver_ios {
+  umbrella header "movver-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}

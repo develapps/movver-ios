@@ -1,0 +1,16 @@
+PODS:
+  - movver-ios (0.1.0)
+
+DEPENDENCIES:
+  - movver-ios (from `../`)
+
+EXTERNAL SOURCES:
+  movver-ios:
+    :path: ../
+
+SPEC CHECKSUMS:
+  movver-ios: 52ae5da308a9f2c2b554b04416e92545d15b2c50
+
+PODFILE CHECKSUM: 4bf81f2b64f2727c8cdf9e802bf5732c50e720ac
+
+COCOAPODS: 1.0.1

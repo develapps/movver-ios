@@ -6,6 +6,5 @@ target 'movver-ios_Example' do
   target 'movver-ios_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
   end
 end

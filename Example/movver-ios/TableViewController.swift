@@ -25,7 +25,7 @@ class TableViewController: MOVVER_VC {
     }
     
     func setupTableView() {
-        self.tableView.estimatedRowHeight = 40
+        self.tableView.rowHeight = 60
         self.tableViewDataSource = MOVVER_TableViewDataSource<MovverTableCell>(viewModelDataSource: unwrappedViewModel.viewModelDatasource)
         self.tableView.dataSource = self.tableViewDataSource
         self.tableView.reloadData()

@@ -10,6 +10,6 @@ import movver_ios
 
 class MovverTableViewModel: MOVVER_TableCellViewModel {
     override func movver_identifier() -> String {
-        return String("MovverTableCell")
+        return String("MovverTableCell")        
     }
 }

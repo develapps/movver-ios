@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import movver_ios
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: MOVVER_VC {
+    
+    // MARK: ViewModel call
+    
+    override func movver_VM_Call(event: Any) {
+        let eventVM = event as! ViewModelToViewControllerEvents
+        switch eventVM {
+        case .changeButtonTitle(let title):
+            self.aButton.setTitle(title, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var aButton: UIButton!
+    
+    // MARK: ViewModel events
+    
+    @IBAction func didPressCollection(_ sender: AnyObject) {
+        self.delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedCollection)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func didPressTable(_ sender: AnyObject) {
+        self.delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedTable)
     }
-
+    
+    @IBAction func didPressAlert(_ sender: AnyObject) {
+        self.delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedAlert)
+    }
 }
 

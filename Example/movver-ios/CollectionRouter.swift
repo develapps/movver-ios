@@ -6,4 +6,8 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import Foundation
+import movver_ios
+
+class CollectionRouter: MOVVER_RT {
+    
+}

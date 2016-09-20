@@ -8,4 +8,11 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import Foundation
+import movver_ios
+
+class MovverCollectionCellViewModel: MOVVER_CollectionCellViewModel {
+    override func movver_identifier() -> String {
+        return "MovverCollectionCell"
+    }
+}
+

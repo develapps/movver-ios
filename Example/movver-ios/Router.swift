@@ -35,6 +35,14 @@ class Router: MOVVER_RT{
             })
         case .goToCollectionView:
             print("Go to collection")
+            let newRouter = CollectionRouter()
+            self.unwrappedController.navigationController?.pushViewController(newRouter.movver_VC_Instantiate(model: nil,
+                                                                                                              viewModelClass:CollectionViewModel.self,
+                                                                                                              storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
+                                                                                                              identifier: "CollectionViewController",
+                                                                                                              previousRouter: self),
+                                                                              animated: true)
+
         case .goToTableView:
             print("Go to tableView")
             let newRouter = TableRouter()

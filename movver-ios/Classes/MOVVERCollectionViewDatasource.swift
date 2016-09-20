@@ -7,26 +7,25 @@
 //
 
 import Foundation
-import CoreData
 
 // MARK:
 // MARK: Collection Datasource
 
-protocol MOVVER_ReusableViewModel_Datasource_Protocol:MOVVER_VM_Datasource_Protocol {
+public protocol MOVVER_ReusableViewModel_Datasource_Protocol:MOVVER_VM_Datasource_Protocol {
     
 }
 
 
-protocol MOVVER_ReusableView_Datasource_Protocol:MOVVER_Cell_Datasource_Protocol {
+public protocol MOVVER_ReusableView_Datasource_Protocol:MOVVER_Cell_Datasource_Protocol {
     
 }
 
 
-protocol MOVVER_CollectionCell_Datasource {
+public protocol MOVVER_CollectionCell_Datasource {
     var viewModelDataSource:MOVVER_CollectionVM_Datasource? { get set }
 }
 
-protocol MOVVER_CollectionVM_Datasource {
+public protocol MOVVER_CollectionVM_Datasource {
     func movver_collectionDatasource(numberOfItemsInSection section: Int) -> Int
     func movver_collectionDatasource(viewModelForItemAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol
     func movver_collectionDatasource_numberOfSections() -> Int
@@ -35,16 +34,16 @@ protocol MOVVER_CollectionVM_Datasource {
     func movver_collectionDatasource(moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
 }
 
-protocol MOVVER_CollectionVM_DatasourceSupplementaryViews {
+public protocol MOVVER_CollectionVM_DatasourceSupplementaryViews {
     func movver_collectionDatasource(viewModelForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol?
 }
 
-protocol MOVVER_CollectionVM_DatasourcePrefetching {
+public protocol MOVVER_CollectionVM_DatasourcePrefetching {
     func movver_collectionDatasource(prefetchItemsAt: [IndexPath])
     func movver_collectionDatasource(cancelPrefetchingForItemsAt: [IndexPath])
 }
 
-protocol MOVVER_CollectionViewDataSourceDelegate {
+public protocol MOVVER_CollectionViewDataSourceDelegate {
     func movver_delegate(datasource: MOVVER_CollectionCell_Datasource, preBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
     func movver_delegate(datasource: MOVVER_CollectionCell_Datasource, postBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
     func movver_delegate(datasource: MOVVER_CollectionCell_Datasource, preBindSuplemementaryView: MOVVER_ReusableView_Datasource_Protocol, atIndexPath:IndexPath)
@@ -53,25 +52,25 @@ protocol MOVVER_CollectionViewDataSourceDelegate {
 }
 
 
-class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,MOVVER_CollectionCell_Datasource,UICollectionViewDataSourcePrefetching
-                                    where   C:UICollectionViewCell , C: MOVVER_Cell_Datasource_Protocol,
+open class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,MOVVER_CollectionCell_Datasource,UICollectionViewDataSourcePrefetching
+                                    where   C:UICollectionViewCell      , C: MOVVER_Cell_Datasource_Protocol,
                                             RV:UICollectionReusableView , RV: MOVVER_ReusableView_Datasource_Protocol{
     
-    var noDataView:UIView?
+    public var noDataView:UIView?
     private var oldView:UIView?
-    var viewModelDataSource:MOVVER_CollectionVM_Datasource?
-    var datasourceDelegate:MOVVER_CollectionViewDataSourceDelegate?
+    public var viewModelDataSource:MOVVER_CollectionVM_Datasource?
+    public var datasourceDelegate:MOVVER_CollectionViewDataSourceDelegate?
     
-    init(viewModelDataSource: MOVVER_CollectionVM_Datasource) {
+    public init(viewModelDataSource: MOVVER_CollectionVM_Datasource) {
         self.viewModelDataSource = viewModelDataSource
     }
     
-    convenience init(viewModelDataSource: MOVVER_CollectionVM_Datasource, datasourceDelegate:MOVVER_CollectionViewDataSourceDelegate) {
+    public convenience init(viewModelDataSource: MOVVER_CollectionVM_Datasource, datasourceDelegate:MOVVER_CollectionViewDataSourceDelegate) {
         self.init(viewModelDataSource:viewModelDataSource)
         self.datasourceDelegate = datasourceDelegate
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         let sectionCount = self.viewModelDataSource?.movver_collectionDatasource_numberOfSections()
         if (sectionCount==0) {
             if  (self.noDataView != nil ) &&
@@ -88,11 +87,11 @@ class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return viewModelDataSource?.movver_collectionDatasource(numberOfItemsInSection: section) ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let viewModel = self.viewModelDataSource?.movver_collectionDatasource(viewModelForItemAt: indexPath) {
             
             let identifier = viewModel.movver_identifier()
@@ -106,7 +105,7 @@ class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let viewModelDataSourceSV = self.viewModelDataSource as? MOVVER_CollectionVM_DatasourceSupplementaryViews else {
             return UICollectionReusableView()
         }
@@ -122,12 +121,12 @@ class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,
         return UICollectionReusableView()
     }
     
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]){
+    open func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]){
         guard let prefetchigDatasource = self as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
         prefetchigDatasource.movver_collectionDatasource(prefetchItemsAt: indexPaths)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]){
+    open func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]){
         guard let prefetchigDatasource = self as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
         prefetchigDatasource.movver_collectionDatasource(cancelPrefetchingForItemsAt: indexPaths)
     }
@@ -138,21 +137,21 @@ class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSource,
 // MARK: Array helper
 
 extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePrefetching{
-    func movver_collectionDatasource(numberOfItemsInSection section: Int) -> Int{
+    public func movver_collectionDatasource(numberOfItemsInSection section: Int) -> Int{
         return self.count
     }
-    func movver_collectionDatasource(viewModelForItemAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol{
+    public  func movver_collectionDatasource(viewModelForItemAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol{
         let viewModel:MOVVER_VM_Datasource_Protocol = self[indexPath.row] as! MOVVER_VM_Datasource_Protocol
         return viewModel
     }
-    func movver_collectionDatasource_numberOfSections() -> Int{
+    public func movver_collectionDatasource_numberOfSections() -> Int{
         return self.count>0 ? 1 : 0
     }
     
-    func movver_collectionDatasource(canMoveItemAt indexPath: IndexPath) -> Bool { return false }
-    func movver_collectionDatasource(moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
+    public func movver_collectionDatasource(canMoveItemAt indexPath: IndexPath) -> Bool { return false }
+    public func movver_collectionDatasource(moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
     
-    func movver_collectionDatasource(prefetchItemsAt: [IndexPath]) {
+    public func movver_collectionDatasource(prefetchItemsAt: [IndexPath]) {
         for indexPath in prefetchItemsAt
         {
             if let viewModel = self[indexPath.row] as? MOVVER_VM_DatasourcePreload_Protocol {
@@ -162,7 +161,7 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
         }
         
     }
-    func movver_collectionDatasource(cancelPrefetchingForItemsAt: [IndexPath]) {
+    public func movver_collectionDatasource(cancelPrefetchingForItemsAt: [IndexPath]) {
         for indexPath in cancelPrefetchingForItemsAt
         {
             if let viewModel = self[indexPath.row] as? MOVVER_VM_DatasourcePreload_Protocol {
@@ -176,14 +175,14 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 
 // MARK: Cell Helper
 
-class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
+open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
     
-    var delegateViewModel:MOVVER_VM_Protocol?
+    open var delegateViewModel:MOVVER_VM_Protocol?
     
-    func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
+    open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }
-    func movver_VM_Call(event: Any){
+    open func movver_VM_Call(event: Any){
         assertionFailure("ERROR: Implement this")
     }
     
@@ -191,13 +190,13 @@ class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_C
 
 // MARK: ReusableViewHelper
 
-class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
-    var delegateViewModel:MOVVER_VM_Protocol?
+open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
+    open var delegateViewModel:MOVVER_VM_Protocol?
     
-    func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
+    open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }
-    func movver_VM_Call(event: Any){
+    open func movver_VM_Call(event: Any){
         assertionFailure("ERROR: Implement this")
     }
 }
@@ -206,26 +205,32 @@ class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasour
 
 // MARK: Cell ViewModel Helper
 
-class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-    func movver_identifier() -> String {
+open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+    open func movver_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""
     }
-    func movver_preload() {
+    open func movver_preload() {
+        print("Trying to preload \(self). Do you forget to implement this?")
     }
-    func movver_cancelPreloading() {
+    open func movver_cancelPreloading() {
+        print("Trying to cancel preload \(self). Do you forget to implement this?")
     }
 }
 
 // MARK: ReusableViewHelper ViewModel Helper
 
-class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
-    func movver_identifier() -> String {
+open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
+    open func movver_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""
     }
-    func movver_preload() {    }
-    func movver_cancelPreloading() { }
+    open func movver_preload() {
+        print("Trying to preload \(self). Do you forget to implement this?")
+    }
+    open func movver_cancelPreloading() {
+        print("Trying to calcel preload \(self). Do you forget to implement this?")
+    }
 }
 
 

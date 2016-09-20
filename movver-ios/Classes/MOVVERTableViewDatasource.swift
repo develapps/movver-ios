@@ -222,8 +222,12 @@ open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MO
         assertionFailure("ERROR: Implement this")
         return ""
     }
-    open func movver_preload() {    }
-    open func movver_cancelPreloading() { }
+    open func movver_preload() {
+        print("Trying to preload \(self). Do you forget to implement this?")
+    }
+    open func movver_cancelPreloading() {
+        print("Trying to cancel preload \(self). Do you forget to implement this?")
+    }
 }
 
 

@@ -56,6 +56,70 @@
             </objects>
             <point key="canvasLocation" x="874" y="-297"/>
         </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="tzN-CY-QJw">
+            <objects>
+                <viewController storyboardIdentifier="CollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OeM-vj-xgf" customClass="CollectionViewController" customModule="movver_ios_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="az7-R9-940"/>
+                        <viewControllerLayoutGuide type="bottom" id="cfl-E8-QEn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rrt-9n-Ad9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n9e-gm-TEb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FqI-1h-FfF">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MovverCollectionCell" reuseIdentifier="MovverCollectionCell" id="paM-Fk-pBv" customClass="MovverCollectionCell" customModule="movver_ios_Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-xl-lLE">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VPd-xl-lLE" firstAttribute="leading" secondItem="paM-Fk-pBv" secondAttribute="leading" id="Rkx-tZ-hkB"/>
+                                            <constraint firstAttribute="trailing" secondItem="VPd-xl-lLE" secondAttribute="trailing" id="Zvy-FD-voP"/>
+                                            <constraint firstItem="VPd-xl-lLE" firstAttribute="top" secondItem="paM-Fk-pBv" secondAttribute="top" id="c4O-fl-1aD"/>
+                                            <constraint firstAttribute="bottom" secondItem="VPd-xl-lLE" secondAttribute="bottom" id="you-Vy-lra"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="theLabel" destination="VPd-xl-lLE" id="RiV-a1-U1n"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n9e-gm-TEb" firstAttribute="leading" secondItem="rrt-9n-Ad9" secondAttribute="leading" id="Ke8-Zo-RM5"/>
+                            <constraint firstItem="n9e-gm-TEb" firstAttribute="top" secondItem="az7-R9-940" secondAttribute="bottom" id="Sne-tG-tDw"/>
+                            <constraint firstAttribute="trailing" secondItem="n9e-gm-TEb" secondAttribute="trailing" id="f7y-Vs-fsF"/>
+                            <constraint firstItem="cfl-E8-QEn" firstAttribute="top" secondItem="n9e-gm-TEb" secondAttribute="bottom" id="stz-DZ-Jjm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="n9e-gm-TEb" id="18P-1T-fW0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21H-y7-Vpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="439"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="x9U-PW-IYa">
             <objects>
@@ -75,7 +139,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r5e-ch-Fd4" id="Tce-va-NlG">
-                                            <frame key="frameInset" width="375" height="59.5"/>
+                                            <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-2i-3o3">

@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This is an implementation of develapps MOVVER architecture. This is a clean architecture that tries to
+separate responsibilities but without tons of boilerplate code. See the example for more.
                        DESC
 
   s.homepage         = 'https://github.com/develapps/movver-ios'

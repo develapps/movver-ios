@@ -29,7 +29,7 @@ separate responsibilities but without tons of boilerplate code. See the example 
   s.source           = { :git => 'https://github.com/develapps/movver-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/pabloromeu'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'movver-ios/Classes/**/*'
   

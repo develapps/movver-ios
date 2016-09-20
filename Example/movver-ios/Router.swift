@@ -9,7 +9,14 @@
 import UIKit
 import movver_ios
 
-class Router: MOVVER_RT<ViewController,ViewModel>{
+class Router: MOVVER_RT{
+    
+    var unwrappedController:ViewController{
+        return self.currentController as! ViewController
+    }
+    
+    
+    
     override func movver_VM_Call(event: Any) {
         let eventViewModel = event as! ViewModelToRouterEvents
         switch eventViewModel {
@@ -32,6 +39,7 @@ class Router: MOVVER_RT<ViewController,ViewModel>{
             print("Go to tableView")
             let newRouter = TableRouter()
             self.unwrappedController.navigationController?.pushViewController(newRouter.movver_VC_Instantiate(model: nil,
+                                                                                                              viewModelClass:TableViewModel.self,
                                                                                                               storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
                                                                                                               identifier: "TableViewController",
                                                                                                               previousRouter: self),
@@ -40,4 +48,8 @@ class Router: MOVVER_RT<ViewController,ViewModel>{
             
         }
     }
+}
+
+class subRouter: Router {
+    
 }

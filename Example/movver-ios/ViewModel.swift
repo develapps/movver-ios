@@ -10,6 +10,9 @@ import UIKit
 import movver_ios
 
 class ViewModel: MOVVER_VM {
+    
+    // MARK: ViewController call
+    
     override func movver_VC_Call(event: Any) {
         let eventVC:ViewControllerEvents = event as! ViewControllerEvents
         switch eventVC {
@@ -21,6 +24,7 @@ class ViewModel: MOVVER_VM {
             self.delegateRouter?.movver_VM_Call(event: ViewModelToRouterEvents.goToTableView)
         }
     }
+    
     override func movver_RT_Call(event: Any) {
         let eventRT:RouterToViewModelEvents = event as! RouterToViewModelEvents
         switch eventRT {

@@ -62,50 +62,17 @@ public protocol MOVVER_VC_Protocol {
 // MARK: _Helper clases_
 
 
-open class MOVVER_RT<VC,VM>:MOVVER_RT_Protocol where VC:MOVVER_VC,VM:MOVVER_VM_Protocol{
+open class MOVVER_RT:MOVVER_RT_Protocol {
     public var currentController   :   MOVVER_VC_Protocol?
     public var viewModel           :   MOVVER_VM_Protocol?
     public var previousRouter      :   MOVVER_RT_Protocol?
     
-    public var unwrappedController:VC {
-        get{
-            return currentController as! VC
-        }
-    }
-    public var unwrappedViewModel:VM{
-        get {
-            return viewModel as! VM
-        }
-    }
     public init() {}
-    public func movver_VC_Instantiate(model:Any?, storyboard:UIStoryboard,identifier:String,previousRouter:MOVVER_RT_Protocol?) -> VC{
-        
-        // Save previous router
-        
-        self.previousRouter = previousRouter
-        
-        // Instantiate View Controller
-        var viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
-        
-        // Create VM and pass the model, the router and controller
-        var viewModel:VM = VM()
-        viewModel.model = model
-        viewModel.delegateView = viewController
-        viewModel.delegateRouter = self
-        self.viewModel = viewModel
-        viewController.delegateViewModel = self.unwrappedViewModel
-        
-        self.currentController = viewController
-        
-        return viewController
-    }
-    
     open func movver_VM_Call(event: Any){
         preconditionFailure("MOVVER: You must implement this")
     }
-    
-}
 
+}
 
 open class MOVVER_VM:MOVVER_VM_Protocol {
     public var delegateView            :   MOVVER_VC_Protocol?
@@ -134,4 +101,35 @@ open class MOVVER_VC:UIViewController,MOVVER_VC_Protocol{
         preconditionFailure("MOVVER: You must implement this")
     }
 }
+
+
+// MARK: _EXTENSION_
+
+public extension MOVVER_RT {
+    
+    public func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:MOVVER_RT_Protocol?) -> VC where VC:MOVVER_VC,VM:MOVVER_VM_Protocol {
+        
+        // Save previous router
+        
+        self.previousRouter = previousRouter
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
+        
+        // Create VM and pass the model, the router and controller
+        
+        var viewModel:VM = VM()
+        viewModel.model = model
+        viewModel.delegateView = viewController
+        viewModel.delegateRouter = self
+        self.viewModel = viewModel
+        viewController.delegateViewModel = self.viewModel
+        
+        self.currentController = viewController
+        
+        return viewController
+    }
+    
+}
+
 

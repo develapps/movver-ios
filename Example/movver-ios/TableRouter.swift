@@ -8,6 +8,6 @@
 
 import movver_ios
 
-class TableRouter: MOVVER_RT<TableViewController,TableViewModel> {
+class TableRouter: MOVVER_RT {
 
 }

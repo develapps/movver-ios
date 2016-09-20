@@ -114,7 +114,7 @@ public extension MOVVER_RT {
         self.previousRouter = previousRouter
         
         // Instantiate View Controller
-        var viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
         
         // Create VM and pass the model, the router and controller
         

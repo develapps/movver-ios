@@ -118,7 +118,7 @@ public extension MOVVER_RT {
         
         // Create VM and pass the model, the router and controller
         
-        var viewModel:VM = VM()
+        let viewModel:VM = VM()
         viewModel.movver_model = model
         viewModel.movver_delegateView = viewController
         viewModel.movver_delegateRouter = self

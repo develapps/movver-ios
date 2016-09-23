@@ -177,7 +177,7 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 
 open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
     
-    open var delegateViewModel:MOVVER_VM_Protocol?
+    open var movver_delegateViewModel:MOVVER_VM_Protocol?
     
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -191,7 +191,7 @@ open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOV
 // MARK: ReusableViewHelper
 
 open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
-    open var delegateViewModel:MOVVER_VM_Protocol?
+    open var movver_delegateViewModel:MOVVER_VM_Protocol?
     
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -206,6 +206,18 @@ open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Dat
 // MARK: Cell ViewModel Helper
 
 open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    
+    public required init() {
+        super.init()
+    }
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+        super.init()
+        self.movver_delegateViewModel = delegateViewModel
+        self.movver_model = model
+        self.movver_delegateRouter = router
+    }
+    
     open func movver_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""
@@ -221,6 +233,17 @@ open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protoc
 // MARK: ReusableViewHelper ViewModel Helper
 
 open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
+    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    public required init() {
+        super.init()
+    }
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+        super.init()
+        self.movver_delegateViewModel = delegateViewModel
+        self.movver_model = model
+        self.movver_delegateRouter = router
+    }
+        
     open func movver_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""

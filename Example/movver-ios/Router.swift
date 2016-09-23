@@ -12,7 +12,7 @@ import movver_ios
 class Router: MOVVER_RT{
     
     var unwrappedController:ViewController{
-        return self.currentController as! ViewController
+        return self.movver_currentController as! ViewController
     }
     
     
@@ -31,7 +31,7 @@ class Router: MOVVER_RT{
             })
             alert.addAction(button)
             self.unwrappedController.present(alert, animated: true, completion: {
-                self.viewModel?.movver_RT_Call(event: RouterToViewModelEvents.didShowAlert)
+                self.movver_viewModel?.movver_RT_Call(event: RouterToViewModelEvents.didShowAlert)
             })
         case .goToCollectionView:
             print("Go to collection")

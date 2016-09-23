@@ -203,7 +203,7 @@ extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
 
 open class MOVVER_TableViewCell:UITableViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
 
-    open var delegateViewModel:MOVVER_VM_Protocol?
+    open var movver_delegateViewModel:MOVVER_VM_Protocol?
 
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -218,6 +218,18 @@ open class MOVVER_TableViewCell:UITableViewCell,MOVVER_VC_Protocol,MOVVER_Cell_D
 // MARK: Cell ViewModel Helper
 
 open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+    
+    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    public required init() {
+        super.init()
+    }
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+        super.init()
+        self.movver_delegateViewModel = delegateViewModel
+        self.movver_model = model
+        self.movver_delegateRouter = router
+    }
+
     open func movver_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""

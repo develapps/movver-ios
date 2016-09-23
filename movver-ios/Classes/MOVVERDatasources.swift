@@ -17,7 +17,8 @@ import Foundation
  */
 
 public protocol MOVVER_VM_Datasource_Protocol:MOVVER_VM_Protocol {
-    var movver_delegateViewModel: MOVVER_VM_Protocol? { get set }
+    var movver_delegateViewModel:   MOVVER_VM_Protocol? { get set }
+    var movver_delegateView:        MOVVER_VC_Protocol? { get set }
     init(model:Any?, delegateViewModel: MOVVER_VM_Protocol?, router:MOVVER_RT_Protocol?)
     func movver_identifier() -> String
 }

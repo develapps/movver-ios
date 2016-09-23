@@ -12,10 +12,10 @@ import movver_ios
 class TableViewController: MOVVER_VC {
 
     @IBOutlet weak var tableView: UITableView!
-    var tableViewDataSource : MOVVER_TableViewDataSource<MovverTableCell>?
+    var tableViewDataSource : MOVVER_TableViewDataSource<MOVVER_TableViewCell>?
     var unwrappedViewModel:TableViewModel{
         get{
-            return self.delegateViewModel as! TableViewModel
+            return self.movver_delegateViewModel as! TableViewModel
         }
     }
 
@@ -26,7 +26,7 @@ class TableViewController: MOVVER_VC {
     
     func setupTableView() {
         self.tableView.rowHeight = 60
-        self.tableViewDataSource = MOVVER_TableViewDataSource<MovverTableCell>(viewModelDataSource: unwrappedViewModel.viewModelDatasource)
+        self.tableViewDataSource = MOVVER_TableViewDataSource<MOVVER_TableViewCell>(viewModelDataSource: unwrappedViewModel.viewModelDatasource)
         self.tableView.dataSource = self.tableViewDataSource
         self.tableView.reloadData()
     }

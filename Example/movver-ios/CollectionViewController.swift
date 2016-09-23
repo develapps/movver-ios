@@ -14,10 +14,10 @@ import movver_ios
 class CollectionViewController: MOVVER_VC {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var collectionViewDataSource : MOVVER_CollectionViewDataSource<MovverCollectionCell,MOVVER_ReusableView>?
+    var collectionViewDataSource : MOVVER_CollectionViewDataSource<MOVVER_CollectionViewCell,MOVVER_ReusableView>?
     var unwrappedViewModel:CollectionViewModel{
         get{
-            return self.delegateViewModel as! CollectionViewModel
+            return self.movver_delegateViewModel as! CollectionViewModel
         }
     }
     
@@ -27,7 +27,7 @@ class CollectionViewController: MOVVER_VC {
     }
     
     func setupTableView() {
-        self.collectionViewDataSource = MOVVER_CollectionViewDataSource<MovverCollectionCell,MOVVER_ReusableView>(viewModelDataSource: unwrappedViewModel.viewModelDatasource)
+        self.collectionViewDataSource = MOVVER_CollectionViewDataSource<MOVVER_CollectionViewCell,MOVVER_ReusableView>(viewModelDataSource: unwrappedViewModel.viewModelDatasource)
         self.collectionView.dataSource = self.collectionViewDataSource
         self.collectionView.reloadData()
     }

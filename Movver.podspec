@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Movver-iOS'
+  s.name             = 'Movver'
   s.version          = '0.2.1'
   s.summary          = 'An implementation of MOVVER protocol with some helpers.'
 

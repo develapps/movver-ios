@@ -76,7 +76,7 @@
 		7EFE4E9957AE7ADEC74C6E42 /* Pods_movver_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movver_ios_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F0F3E670631E3EED4538355 /* Pods_movver_ios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movver_ios_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2485E7D8B2B36A39157307 /* Pods-movver-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movver-ios_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-movver-ios_Tests/Pods-movver-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F21ECD746E561F8BDC3B6622 /* Movver-iOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = "Movver-iOS.podspec"; path = "../Movver-iOS.podspec"; sourceTree = "<group>"; };
+		F21ECD746E561F8BDC3B6622 /* Movver.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Movver.podspec; path = ../Movver.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +184,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				F21ECD746E561F8BDC3B6622 /* Movver-iOS.podspec */,
+				F21ECD746E561F8BDC3B6622 /* Movver.podspec */,
 				6C4DC2934124477DDB8C0BF5 /* README.md */,
 				36DE14062696FB4D172C8A86 /* LICENSE */,
 			);

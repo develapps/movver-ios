@@ -1,6 +1,5 @@
 //
 //  MOVVERCollectionViewDatasource.swift
-//  Santoral Pro
 //
 //  Created by Pablo Romeu on 8/7/16.
 //  Copyright © 2016 Pablo Romeu. All rights reserved.
@@ -176,8 +175,12 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 // MARK: Cell Helper
 
 open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
+    public func movver_tellViewModel(event: Any) {
+        self.movver_delegateViewModel?.movver_VC_Call(event: event)
+    }
+
     
-    open var movver_delegateViewModel:MOVVER_VM_Protocol?
+    open var movver_delegateViewModel:MOVVER_VM_Protocol!
     
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -191,7 +194,11 @@ open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOV
 // MARK: ReusableViewHelper
 
 open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
-    open var movver_delegateViewModel:MOVVER_VM_Protocol?
+    public func movver_tellViewModel(event: Any) {
+        self.movver_delegateViewModel?.movver_VC_Call(event: event)
+    }
+
+    open var movver_delegateViewModel:MOVVER_VM_Protocol!
     
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -206,12 +213,12 @@ open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Dat
 // MARK: Cell ViewModel Helper
 
 open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
     
     public required init() {
         super.init()
     }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
         super.init()
         self.movver_delegateViewModel = delegateViewModel
         self.movver_model = model
@@ -233,11 +240,11 @@ open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protoc
 // MARK: ReusableViewHelper ViewModel Helper
 
 open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
-    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
     public required init() {
         super.init()
     }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
         super.init()
         self.movver_delegateViewModel = delegateViewModel
         self.movver_model = model

@@ -22,6 +22,7 @@ class CollectionViewController: MOVVER_VC {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.setupTableView()
         
     }

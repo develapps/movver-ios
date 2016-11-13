@@ -1,6 +1,5 @@
 //
 //  MOVVERTableViewDatasource.swift
-//  Santoral Pro
 //
 //  Created by Pablo Romeu on 8/7/16.
 //  Copyright © 2016 Pablo Romeu. All rights reserved.
@@ -202,8 +201,12 @@ extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
 // MARK: Cell Helper
 
 open class MOVVER_TableViewCell:UITableViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
+    public func movver_tellViewModel(event: Any) {
+        self.movver_delegateViewModel.movver_VC_Call(event: event)
+    }
 
-    open var movver_delegateViewModel:MOVVER_VM_Protocol?
+
+    open  var movver_delegateViewModel:MOVVER_VM_Protocol!
 
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
@@ -219,11 +222,11 @@ open class MOVVER_TableViewCell:UITableViewCell,MOVVER_VC_Protocol,MOVVER_Cell_D
 
 open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
     
-    public var movver_delegateViewModel: MOVVER_VM_Protocol?
+    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
     public required init() {
         super.init()
     }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol?, router: MOVVER_RT_Protocol?) {
+    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
         super.init()
         self.movver_delegateViewModel = delegateViewModel
         self.movver_model = model

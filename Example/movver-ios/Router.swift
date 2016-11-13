@@ -31,7 +31,7 @@ class Router: MOVVER_RT{
             })
             alert.addAction(button)
             self.unwrappedController.present(alert, animated: true, completion: {
-                self.movver_viewModel?.movver_RT_Call(event: RouterToViewModelEvents.didShowAlert)
+                self.movver_tellViewModel(event: RouterToViewModelEvents.didShowAlert)
             })
         case .goToCollectionView:
             print("Go to collection")

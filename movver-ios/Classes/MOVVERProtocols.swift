@@ -108,13 +108,22 @@ open class MOVVER_VC:UIViewController,MOVVER_VC_Protocol{
 public extension MOVVER_RT {
 
     public func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:MOVVER_RT_Protocol?) -> VC where VC:MOVVER_VC,VM:MOVVER_VM_Protocol {
-        
+        // Instantiate View Controller
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
+        self.movver_VC_Bind(model: model, viewModelClass: viewModelClass, viewController: viewController, previousRouter: previousRouter)
+        return viewController
+    }
+    /// Binds all the movver objects
+    ///
+    /// - Parameters:
+    ///   - model: the model, if any
+    ///   - viewModelClass: the viewModel class to be instantiated
+    ///   - viewController: the view controller
+    ///   - previousRouter: the previous router
+    public func movver_VC_Bind<VC,VM>(model:Any?, viewModelClass:VM.Type, viewController:VC ,previousRouter:MOVVER_RT_Protocol?)  where VC:MOVVER_VC,VM:MOVVER_VM_Protocol {
         // Save previous router
         
         self.movver_previousRouter = previousRouter
-        
-        // Instantiate View Controller
-        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
         
         // Create VM and pass the model, the router and controller
         
@@ -126,8 +135,6 @@ public extension MOVVER_RT {
         viewController.movver_delegateViewModel = self.movver_viewModel
         
         self.movver_currentController = viewController
-        
-        return viewController
     }
     
 }

@@ -26,7 +26,7 @@ pod "movver-ios"
 
 ## Author
 
-Pablo Romeu, pablo.romeu@develapps.com
+Pablo Romeu, pablo.romeu@develapps.com Twitter [@pabloromeu](http://twitter.com/pabloromeu)
 
 ## License
 

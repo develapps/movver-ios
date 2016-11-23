@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/movver-ios.svg?style=flat)](http://cocoapods.org/pods/movver-ios)
 [![Platform](https://img.shields.io/cocoapods/p/movver-ios.svg?style=flat)](http://cocoapods.org/pods/movver-ios)
 
-This is a template for iOS Projects based on MOVVER. For more info:  [Develapps](http://www.develapps.com)
+This is a template for iOS Projects based on MOVVER. For more info:  [MOVVER ARCHITECTURE](http://www.develapps.com/es/noticias/movver-ios-architecture)
 
 ## Example
 

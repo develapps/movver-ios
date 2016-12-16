@@ -98,6 +98,7 @@ open class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSo
             
             self.datasourceDelegate?.movver_delegate(datasource: self, preBindCell: cell, atIndexPath: indexPath)
             cell.movver_bind(viewModel: viewModel)
+			viewModel.movver_delegateView = cell
             self.datasourceDelegate?.movver_delegate(datasource: self, postBindCell: cell, atIndexPath: indexPath)
             return cell
         }
@@ -133,6 +134,34 @@ open class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSo
     
 }
 
+
+
+// MARK: Extension to provide a default implementation for all the datasource methods if not implemented
+
+extension MOVVER_CollectionVM_Datasource{
+	public func movver_collectionDatasource(numberOfItemsInSection section: Int) -> Int{
+		return 0
+	}
+	public  func movver_collectionDatasource(viewModelForItemAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol{
+		return MOVVER_CollectionCellViewModel()
+	}
+	public func movver_collectionDatasource_numberOfSections() -> Int{
+		return 0
+	}
+	
+	public func movver_collectionDatasource(canMoveItemAt indexPath: IndexPath) -> Bool { return false }
+	public func movver_collectionDatasource(moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
+}
+
+// MARK: Extension to provide a default implementation for all the prefetch methods if not implemented
+
+extension MOVVER_CollectionVM_DatasourcePrefetching{
+	public func movver_collectionDatasource(prefetchItemsAt: [IndexPath]) {}
+	public func movver_collectionDatasource(cancelPrefetchingForItemsAt: [IndexPath]) {}
+}
+
+
+
 // MARK: Array helper
 
 extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePrefetching{
@@ -146,10 +175,7 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
     public func movver_collectionDatasource_numberOfSections() -> Int{
         return self.count>0 ? 1 : 0
     }
-    
-    public func movver_collectionDatasource(canMoveItemAt indexPath: IndexPath) -> Bool { return false }
-    public func movver_collectionDatasource(moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
-    
+	
     public func movver_collectionDatasource(prefetchItemsAt: [IndexPath]) {
         for indexPath in prefetchItemsAt
         {
@@ -262,6 +288,3 @@ open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasour
         print("Trying to calcel preload \(self). Do you forget to implement this?")
     }
 }
-
-
-

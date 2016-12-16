@@ -1,16 +1,16 @@
 PODS:
-  - movver-ios (0.1.0)
+  - Movver (2.0.0)
 
 DEPENDENCIES:
-  - movver-ios (from `../`)
+  - Movver (from `../`)
 
 EXTERNAL SOURCES:
-  movver-ios:
-    :path: ../
+  Movver:
+    :path: "../"
 
 SPEC CHECKSUMS:
-  movver-ios: 52ae5da308a9f2c2b554b04416e92545d15b2c50
+  Movver: ef8268dc68cc8fcd5e4ed50c050d6231a2d5d3e8
 
-PODFILE CHECKSUM: 4bf81f2b64f2727c8cdf9e802bf5732c50e720ac
+PODFILE CHECKSUM: 5cab5c9fb14a83cefd64b8f5d457d22bd76f13fc
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

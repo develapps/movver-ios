@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## movver-ios
+## Movver
 
 The MIT License (MIT)
 

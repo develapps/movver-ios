@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import movver_ios
+import Movver
 
 class Router: MOVVER_RT{
     

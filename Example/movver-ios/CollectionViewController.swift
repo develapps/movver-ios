@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import movver_ios
+import Movver
 
 
 

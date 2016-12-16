@@ -6,7 +6,7 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import movver_ios
+import Movver
 
 class MovverTableCell: MOVVER_TableViewCell {
     @IBOutlet weak var theLabel: UILabel!

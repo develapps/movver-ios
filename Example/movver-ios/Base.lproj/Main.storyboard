@@ -22,24 +22,31 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="wKb-tE-cW2">
-                                <rect key="frame" x="153" y="188.5" width="69" height="290"/>
+                                <rect key="frame" x="107" y="123.5" width="161" height="420"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAS-m8-HhG">
-                                        <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="30"/>
                                         <state key="normal" title="Alert"/>
                                         <connections>
                                             <action selector="didPressAlert:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Nbc-WA-jP1"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7U-R8-gwr">
+                                        <rect key="frame" x="0.0" y="130" width="161" height="30"/>
+                                        <state key="normal" title="Pushed View Controller"/>
+                                        <connections>
+                                            <segue destination="UlZ-ni-Bma" kind="show" identifier="pushedSegue" id="ifk-uk-dVD"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-gF-yXk">
-                                        <rect key="frame" x="0.0" y="130" width="69" height="30"/>
+                                        <rect key="frame" x="0.0" y="260" width="161" height="30"/>
                                         <state key="normal" title="Collection"/>
                                         <connections>
                                             <action selector="didPressCollection:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="n1P-ga-17d"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmx-YX-lIi">
-                                        <rect key="frame" x="0.0" y="260" width="69" height="30"/>
+                                        <rect key="frame" x="0.0" y="390" width="161" height="30"/>
                                         <state key="normal" title="Table"/>
                                         <connections>
                                             <action selector="didPressTable:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pcQ-WU-kEo"/>
@@ -129,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="1465" y="439"/>
         </scene>
-        <!--View Controller-->
+        <!--Pushed View Controller-->
         <scene sceneID="5nc-WW-Ti7">
             <objects>
-                <viewController id="UlZ-ni-Bma" sceneMemberID="viewController">
+                <viewController id="UlZ-ni-Bma" customClass="PushedViewController" customModule="movver_ios_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aDo-tX-IfO"/>
                         <viewControllerLayoutGuide type="bottom" id="ks1-Ie-Rc4"/>
@@ -176,7 +183,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r5e-ch-Fd4" id="Tce-va-NlG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JK2-2i-3o3">

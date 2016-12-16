@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Movver'
-  s.version          = '0.2.1'
+  s.version          = '2.0.0'
   s.summary          = 'An implementation of MOVVER protocol with some helpers.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ separate responsibilities but without tons of boilerplate code. See the example 
   s.source           = { :git => 'https://github.com/develapps/movver-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/pabloromeu'
 
-  s.ios.deployment_target = '9.3'
+  s.ios.deployment_target = '10.1'
 
   s.source_files = 'movver-ios/Classes/**/*'
   

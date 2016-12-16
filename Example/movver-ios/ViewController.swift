@@ -26,15 +26,15 @@ class ViewController: MOVVER_VC {
     // MARK: ViewModel events
     
     @IBAction func didPressCollection(_ sender: AnyObject) {
-        self.movver_delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedCollection)
+        self.movver_tellViewModel(event: ViewControllerEvents.pressedCollection)
     }
 
     @IBAction func didPressTable(_ sender: AnyObject) {
-        self.movver_delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedTable)
+        self.movver_tellViewModel(event: ViewControllerEvents.pressedTable)
     }
     
     @IBAction func didPressAlert(_ sender: AnyObject) {
-        self.movver_delegateViewModel?.movver_VC_Call(event: ViewControllerEvents.pressedAlert)
+        self.movver_tellViewModel(event: ViewControllerEvents.pressedAlert)
     }
 }
 

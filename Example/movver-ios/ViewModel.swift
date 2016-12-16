@@ -17,11 +17,11 @@ class ViewModel: MOVVER_VM {
         let eventVC:ViewControllerEvents = event as! ViewControllerEvents
         switch eventVC {
         case .pressedAlert:
-            self.movver_delegateRouter?.movver_VM_Call(event: ViewModelToRouterEvents.showAlert("Alert Button Pressed"))
+            self.movver_tellRouter(event: ViewModelToRouterEvents.showAlert("Alert Button Pressed"))
         case .pressedCollection:
-            self.movver_delegateRouter?.movver_VM_Call(event: ViewModelToRouterEvents.goToCollectionView)
+            self.movver_tellRouter(event: ViewModelToRouterEvents.goToCollectionView)
         case .pressedTable:
-            self.movver_delegateRouter?.movver_VM_Call(event: ViewModelToRouterEvents.goToTableView)
+            self.movver_tellRouter(event: ViewModelToRouterEvents.goToTableView)
         }
     }
     
@@ -29,7 +29,8 @@ class ViewModel: MOVVER_VM {
         let eventRT:RouterToViewModelEvents = event as! RouterToViewModelEvents
         switch eventRT {
         case .didShowAlert:
-            self.movver_delegateView?.movver_VM_Call(event: ViewModelToViewControllerEvents.changeButtonTitle("Alerted!"))
+            self.movver_tellViewController(event: ViewModelToViewControllerEvents.changeButtonTitle("Alerted!"))
+
         }
 
     }

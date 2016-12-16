@@ -6,7 +6,7 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import movver_ios
+import Movver
 
 class MovverTableViewModel: MOVVER_TableCellViewModel {
     override func movver_identifier() -> String {

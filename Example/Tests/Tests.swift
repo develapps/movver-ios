@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import movver_ios
+import Movver
 
 class Tests: XCTestCase {
     

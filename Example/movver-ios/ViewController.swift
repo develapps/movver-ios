@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import movver_ios
+import Movver
 
 class ViewController: MOVVER_VC {
     
@@ -20,7 +20,15 @@ class ViewController: MOVVER_VC {
             self.aButton.setTitle(title, for: .normal)
         }
     }
-    
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "pushedSegue" {
+			let router = PushedRouter()
+			let vc = segue.destination as! MOVVER_VC
+			router.movver_VC_Bind(model: nil, viewModelClass: PushedViewModel.self, viewController: vc , previousRouter: self.movver_delegateViewModel.movver_delegateRouter)
+		}
+	}
+	
     @IBOutlet weak var aButton: UIButton!
     
     // MARK: ViewModel events

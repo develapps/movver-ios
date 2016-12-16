@@ -1,0 +1,6 @@
+framework module Movver {
+  umbrella header "Movver-umbrella.h"
+
+  export *
+  module * { export * }
+}

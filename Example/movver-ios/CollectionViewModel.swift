@@ -6,7 +6,7 @@
 //  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
-import movver_ios
+import Movver
 
 class CollectionViewModel: MOVVER_VM{
     lazy var viewModelDatasource:Array<MOVVER_CollectionCellViewModel> =  [

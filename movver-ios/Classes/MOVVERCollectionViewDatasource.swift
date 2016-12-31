@@ -114,6 +114,7 @@ open class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSo
             let view:RV = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath) as! RV
             self.datasourceDelegate?.movver_delegate(datasource: self, preBindSuplemementaryView: view, atIndexPath: indexPath)
             view.movver_bind(viewModel: viewModel)
+			viewModel.movver_delegateView = view
             self.datasourceDelegate?.movver_delegate(datasource: self, postBindSuplementaryView: view, atIndexPath: indexPath)
             return view;
             

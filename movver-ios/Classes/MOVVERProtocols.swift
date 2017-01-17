@@ -87,15 +87,6 @@ protocol MOVVER_DeepLinking_Protocol{
 	func movver_routeToDestination(url:URL, animated:Bool, model:Any?)
 }
 
-extension MOVVER_DeepLinking_Protocol{
-	func movver_canRouteTo(url: URL) -> Bool{
-		return false
-	}
-	func movver_routeToDestination(url:URL, animated:Bool, model:Any?){
-		// No implementation
-	}
-}
-
 // MARK: _RT_
 
 open class MOVVER_RT:MOVVER_RT_Protocol,MOVVER_DeepLinking_Protocol {
@@ -109,6 +100,13 @@ open class MOVVER_RT:MOVVER_RT_Protocol,MOVVER_DeepLinking_Protocol {
     public func movver_tellViewModel(event: Any) {
         self.movver_viewModel?.movver_RT_Call(event: event)
     }
+	open func movver_canRouteTo(url: URL) -> Bool{
+		return false
+	}
+	open func movver_routeToDestination(url:URL, animated:Bool, model:Any?){
+		// No implementation
+	}
+
 
 }
 

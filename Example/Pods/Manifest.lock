@@ -1,5 +1,5 @@
 PODS:
-  - Movver (2.0.0)
+  - Movver (2.1.2)
 
 DEPENDENCIES:
   - Movver (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Movver: ef8268dc68cc8fcd5e4ed50c050d6231a2d5d3e8
+  Movver: '0159a4c63c8f765149b2bd33e6ee448692d4b1ab'
 
 PODFILE CHECKSUM: 5cab5c9fb14a83cefd64b8f5d457d22bd76f13fc
 

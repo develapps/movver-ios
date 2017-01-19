@@ -64,8 +64,32 @@ public protocol MOVVER_VC_Protocol: class {
 
 // MARK: _Helper clases_
 
+//--------------------------------------------------------
+// MARK: Deep linking
+//--------------------------------------------------------
 
-open class MOVVER_RT:MOVVER_RT_Protocol {
+
+/// This protocol implements two methods to route through the app to a specific screen
+protocol MOVVER_DeepLinking_Protocol{
+	
+	/// Tells whether a specific router
+	///
+	/// - Parameter url: the url to route to
+	/// - Returns: Whether the route is known
+	func movver_canRouteTo(url: URL) -> Bool
+	
+	/// This method routes to the destination viewController
+	///
+	/// - Parameters:
+	///   - url: the url to route to
+	///   - animated: whether the route should be animated or not
+	///   - model: if a model should be attached
+	func movver_routeToDestination(url:URL, animated:Bool, model:Any?)
+}
+
+// MARK: _RT_
+
+open class MOVVER_RT:MOVVER_RT_Protocol,MOVVER_DeepLinking_Protocol {
     public var movver_currentController   :   MOVVER_VC_Protocol!
     public var movver_viewModel           :   MOVVER_VM_Protocol!
     public var movver_previousRouter      :   MOVVER_RT_Protocol!
@@ -76,6 +100,13 @@ open class MOVVER_RT:MOVVER_RT_Protocol {
     public func movver_tellViewModel(event: Any) {
         self.movver_viewModel?.movver_RT_Call(event: event)
     }
+	open func movver_canRouteTo(url: URL) -> Bool{
+		return false
+	}
+	open func movver_routeToDestination(url:URL, animated:Bool, model:Any?){
+		// No implementation
+	}
+
 
 }
 
@@ -103,6 +134,8 @@ open class MOVVER_VM:MOVVER_VM_Protocol {
     public func movver_tellRouter(event: Any) {
         self.movver_delegateRouter?.movver_VM_Call(event: event)
     }
+	
+	
 }
 
 
@@ -118,10 +151,10 @@ open class MOVVER_VC:UIViewController,MOVVER_VC_Protocol{
 }
 
 
+
 // MARK: _EXTENSION_
 
 public extension MOVVER_RT {
-
 	
     /// Instantiates and binds all movver objects together
     ///

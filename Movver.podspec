@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Movver'
-  s.version          = '2.0.1'
+  s.version          = '2.1.2'
   s.summary          = 'An implementation of MOVVER protocol with some helpers.'
 
 # This description is used to generate tags and improve search results.
@@ -20,6 +20,8 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 This is an implementation of develapps MOVVER architecture. This is a clean architecture that tries to
 separate responsibilities but without tons of boilerplate code. See the example for more.
+
+v2.1.0: Implements deep linking with routes
                        DESC
 
   s.homepage         = 'https://github.com/develapps/movver-ios'
@@ -29,7 +31,7 @@ separate responsibilities but without tons of boilerplate code. See the example 
   s.source           = { :git => 'https://github.com/develapps/movver-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/pabloromeu'
 
-  s.ios.deployment_target = '10.1'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'movver-ios/Classes/**/*'
   

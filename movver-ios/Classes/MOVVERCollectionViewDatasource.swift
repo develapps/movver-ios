@@ -123,12 +123,12 @@ open class MOVVER_CollectionViewDataSource<C,RV>:NSObject,UICollectionViewDataSo
     }
     
     open func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]){
-        guard let prefetchigDatasource = self as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
+        guard let prefetchigDatasource = self.viewModelDataSource as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
         prefetchigDatasource.movver_collectionDatasource(prefetchItemsAt: indexPaths)
     }
     
     open func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]){
-        guard let prefetchigDatasource = self as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
+        guard let prefetchigDatasource = self.viewModelDataSource as? MOVVER_CollectionVM_DatasourcePrefetching else { return }
         prefetchigDatasource.movver_collectionDatasource(cancelPrefetchingForItemsAt: indexPaths)
     }
     

@@ -140,12 +140,12 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
     // MARK: Prefetching
     
     open func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        guard let prefetchingDatasource = self as? MOVVER_TableVM_DatasourcePrefetching else { return }
+        guard let prefetchingDatasource = self.viewModelDataSource as? MOVVER_TableVM_DatasourcePrefetching else { return }
         prefetchingDatasource.movver_tableDatasource(prefetchRowsAt: indexPaths)
     }
     
     open func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        guard let prefetchingDatasource = self as? MOVVER_TableVM_DatasourcePrefetching else { return }
+        guard let prefetchingDatasource = self.viewModelDataSource as? MOVVER_TableVM_DatasourcePrefetching else { return }
         prefetchingDatasource.movver_tableDatasource(cancelPrefetchingForRowsAt: indexPaths)
     }
     

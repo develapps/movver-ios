@@ -128,7 +128,7 @@ open class MOVVER_RT:mv_rt,mv_rt_imp,mv_DeepLinking_Protocol {
 	public var movver_previousRouter:mv_rt{
 		return self.movver_previousRouter
 	}
-	public var movver_viewController:mv_vc{
+	public var movver_currentController:mv_vc{
 		return self.mv_generic_view
 	}
 	public var movver_viewModel:mv_vm{

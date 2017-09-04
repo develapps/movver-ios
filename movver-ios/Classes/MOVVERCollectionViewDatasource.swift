@@ -202,9 +202,16 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 // MARK: Cell Helper
 
 open class MOVVER_CollectionViewCell:UICollectionViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
-	public var mv_generic_viewModel: mv_vm!
-    open var movver_delegateViewModel:mv_vm!
-    open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
+	open var mv_generic_viewModel: mv_vm!
+	open var movver_delegateViewModel: mv_vm{
+		get{
+			return self.mv_generic_viewModel
+		}
+		set{
+			self.mv_generic_viewModel = movver_delegateViewModel
+		}
+	}
+	open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }
 }
@@ -212,10 +219,16 @@ open class MOVVER_CollectionViewCell:UICollectionViewCell,mv_vc,MOVVER_Cell_Data
 // MARK: ReusableViewHelper
 
 open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
-	public var mv_generic_viewModel: mv_vm!
-
-    open var movver_delegateViewModel:mv_vm!
-    
+	open var mv_generic_viewModel: mv_vm!
+	open var movver_delegateViewModel: mv_vm{
+		get{
+			return self.mv_generic_viewModel
+		}
+		set{
+			self.mv_generic_viewModel = movver_delegateViewModel
+		}
+	}
+	
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }

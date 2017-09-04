@@ -13,8 +13,13 @@ import Movver
 //--------------------------------------------------------
 // MARK: viewmodel class
 //--------------------------------------------------------
-class ViewModel: BaseViewModel{
-	
+class ViewModel: mv_vm{
+	var mv_generic_model: Any?
+	var mv_generic_view: mv_vc!
+	var mv_generic_router: mv_rt!
+	required init() {
+		
+	}
 }
 
 //--------------------------------------------------------
@@ -38,7 +43,9 @@ extension ViewModel: mv_viewModel{
 //--------------------------------------------------------
 
 protocol ViewModelProtocol:mv_vm{
-	
+	func showAlert()
+	func showCollection()
+	func showTable()
 }
 
 //--------------------------------------------------------
@@ -46,5 +53,17 @@ protocol ViewModelProtocol:mv_vm{
 //--------------------------------------------------------
 
 extension ViewModel: ViewModelProtocol{
-	
+	func showAlert(){
+		print("Alert")
+		self.mv_router().showAlert(alertString: "Alert shown!")
+	}
+	func showCollection(){
+		print("Collection")
+		self.mv_router().showCollection()
+	}
+	func showTable()
+	{
+		print("Table")
+		self.mv_router().showTableView()
+	}
 }

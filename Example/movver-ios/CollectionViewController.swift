@@ -11,13 +11,13 @@ import Movver
 
 
 
-class CollectionViewController: BaseViewController {
+class CollectionViewController: MOVVER_VC {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var collectionViewDataSource : MOVVER_CollectionViewDataSource<MOVVER_CollectionViewCell,MOVVER_ReusableView>?
     var unwrappedViewModel:CollectionViewModel{
         get{
-            return self.mv_generic_viewModel as! CollectionViewModel
+            return self.movver_delegateViewModel as! CollectionViewModel
         }
     }
     

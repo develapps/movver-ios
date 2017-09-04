@@ -226,17 +226,15 @@ open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Dat
 
 // MARK: Cell ViewModel Helper
 
-open class MOVVER_CollectionCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-	public var mv_generic_view: mv_vc!
-	public var mv_generic_router: mv_rt!
-	public var mv_generic_model: Any?
+open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
 	public var movver_delegateViewModel: mv_vm!
 	public var movver_delegateView: mv_vc!
 
     public required init() {
-		
+		super.init()
     }
 	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
+		super.init()
         self.movver_delegateViewModel = delegateViewModel
         self.mv_generic_model = model
         self.mv_generic_router = router
@@ -256,17 +254,15 @@ open class MOVVER_CollectionCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,M
 
 // MARK: ReusableViewHelper ViewModel Helper
 
-open class MOVVER_ReusableViewModel: mv_vm,MOVVER_ReusableViewModel_Datasource_Protocol {
-	public var mv_generic_view: mv_vc!
-	public var mv_generic_router: mv_rt!
-	public var mv_generic_model: Any?
+open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
 	public var movver_delegateViewModel: mv_vm!
 	public var movver_delegateView: mv_vc!
 	
 	public required init() {
-		
+		super.init()
 	}
 	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
+		super.init()
 		self.movver_delegateViewModel = delegateViewModel
 		self.mv_generic_model = model
 		self.mv_generic_router = router

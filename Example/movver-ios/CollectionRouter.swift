@@ -8,6 +8,6 @@
 
 import Movver
 
-class CollectionRouter: BaseRouter {
+class CollectionRouter: MOVVER_RT {
     
 }

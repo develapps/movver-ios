@@ -237,16 +237,15 @@ open class MOVVER_TableViewCell:UITableViewCell,mv_vc,MOVVER_Cell_Datasource_Pro
 
 // MARK: Cell ViewModel Helper
 
-open class MOVVER_TableCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
 	public var movver_delegateView: mv_vc!
 	public var movver_delegateViewModel: mv_vm!
 
-	public var mv_generic_model: Any?
-	public var mv_generic_view: mv_vc!
-	public var mv_generic_router: mv_rt!
 	public required init() {
+		super.init()
     }
 	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
+		super.init()
         self.movver_delegateViewModel = delegateViewModel
         self.mv_generic_model = model
         self.mv_generic_router = router

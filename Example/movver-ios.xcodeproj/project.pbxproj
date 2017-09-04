@@ -13,12 +13,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		6E6528191F5D95090010DD70 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6528181F5D95090010DD70 /* BaseViewController.swift */; };
-		6E65281B1F5D95120010DD70 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65281A1F5D95120010DD70 /* BaseViewModel.swift */; };
-		6E65281D1F5D951A0010DD70 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65281C1F5D951A0010DD70 /* BaseRouter.swift */; };
 		6E7B3AE11D8AA63A00B43B60 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B3AE01D8AA63A00B43B60 /* Router.swift */; };
 		6E7B3AE31D8AA64700B43B60 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B3AE21D8AA64700B43B60 /* ViewModel.swift */; };
-		6E7B3AE71D8AAB5D00B43B60 /* EventsDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7B3AE61D8AAB5D00B43B60 /* EventsDefinition.swift */; };
 		6EC45F311E03F20E009A5E7E /* PushedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC45F301E03F20E009A5E7E /* PushedViewController.swift */; };
 		6EC45F331E03F21A009A5E7E /* PushedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC45F321E03F21A009A5E7E /* PushedViewModel.swift */; };
 		6EC45F351E03F225009A5E7E /* PushedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC45F341E03F225009A5E7E /* PushedRouter.swift */; };
@@ -64,12 +60,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6C4DC2934124477DDB8C0BF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		6E6528181F5D95090010DD70 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		6E65281A1F5D95120010DD70 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		6E65281C1F5D951A0010DD70 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		6E7B3AE01D8AA63A00B43B60 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		6E7B3AE21D8AA64700B43B60 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		6E7B3AE61D8AAB5D00B43B60 /* EventsDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDefinition.swift; sourceTree = "<group>"; };
 		6EC45F301E03F20E009A5E7E /* PushedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedViewController.swift; sourceTree = "<group>"; };
 		6EC45F321E03F21A009A5E7E /* PushedViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedViewModel.swift; sourceTree = "<group>"; };
 		6EC45F341E03F225009A5E7E /* PushedRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedRouter.swift; sourceTree = "<group>"; };
@@ -155,7 +147,6 @@
 		607FACD21AFB9204008FA782 /* Example for movver-ios */ = {
 			isa = PBXGroup;
 			children = (
-				6E6528171F5D94D90010DD70 /* Base */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				6EE88CF91D91240F00596872 /* CollectionView */,
 				6EF97B891D8AF47D00E32D6A /* TableView */,
@@ -205,23 +196,12 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		6E6528171F5D94D90010DD70 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				6E6528181F5D95090010DD70 /* BaseViewController.swift */,
-				6E65281A1F5D95120010DD70 /* BaseViewModel.swift */,
-				6E65281C1F5D951A0010DD70 /* BaseRouter.swift */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
 		6E7B3ADF1D8AA5ED00B43B60 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				6E7B3AE01D8AA63A00B43B60 /* Router.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				6E7B3AE21D8AA64700B43B60 /* ViewModel.swift */,
-				6E7B3AE61D8AAB5D00B43B60 /* EventsDefinition.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -492,20 +472,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE88D041D91246C00596872 /* MovverCollectionCell.swift in Sources */,
-				6E65281B1F5D95120010DD70 /* BaseViewModel.swift in Sources */,
 				6EE88CFC1D91243300596872 /* CollectionViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				6E65281D1F5D951A0010DD70 /* BaseRouter.swift in Sources */,
 				6EE88D061D91247B00596872 /* MovverCollectionCellViewModel.swift in Sources */,
 				6EE88CFE1D91243F00596872 /* CollectionViewModel.swift in Sources */,
-				6E6528191F5D95090010DD70 /* BaseViewController.swift in Sources */,
 				6EF97B941D8AF69D00E32D6A /* MovverTableCell.swift in Sources */,
 				6EF97B8D1D8AF4B300E32D6A /* TableViewModel.swift in Sources */,
 				6EF97B911D8AF4DE00E32D6A /* TableEventsDefinition.swift in Sources */,
 				6EF97B8B1D8AF4A000E32D6A /* TableViewController.swift in Sources */,
 				6EC45F311E03F20E009A5E7E /* PushedViewController.swift in Sources */,
 				6E7B3AE11D8AA63A00B43B60 /* Router.swift in Sources */,
-				6E7B3AE71D8AAB5D00B43B60 /* EventsDefinition.swift in Sources */,
 				6EF97B8F1D8AF4CA00E32D6A /* TableRouter.swift in Sources */,
 				6E7B3AE31D8AA64700B43B60 /* ViewModel.swift in Sources */,
 				6EE88D021D91245B00596872 /* CollectionEventsDefinition.swift in Sources */,

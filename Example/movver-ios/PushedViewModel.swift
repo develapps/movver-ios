@@ -9,5 +9,5 @@
 import Movver
 
 
-class PushedViewModel: BaseViewModel {
+class PushedViewModel: MOVVER_VM {
 }

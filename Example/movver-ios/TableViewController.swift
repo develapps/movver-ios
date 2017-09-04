@@ -9,14 +9,13 @@
 import UIKit
 import Movver
 
-class TableViewController: BaseViewController {
+class TableViewController: MOVVER_VC {
 
-	
     @IBOutlet weak var tableView: UITableView!
     var tableViewDataSource : MOVVER_TableViewDataSource<MOVVER_TableViewCell>?
     var unwrappedViewModel:TableViewModel{
         get{
-            return self.mv_generic_viewModel as! TableViewModel
+            return self.movver_delegateViewModel as! TableViewModel
         }
     }
 
@@ -32,6 +31,10 @@ class TableViewController: BaseViewController {
         self.tableView.dataSource = self.tableViewDataSource
         self.tableView.reloadData()
     }
+
+    
+    
+
 
 }
 

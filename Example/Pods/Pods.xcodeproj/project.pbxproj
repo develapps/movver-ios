@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2787E37593BCF5D2D58B700C95FFFA27 /* MOVVERCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2833DC43BF6C378DFACB5922A27F0C91 /* MOVVERCollectionViewDatasource.swift */; };
+		0209C556B5DC1DF0996397C613CD5095 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		33079FDDC29CAF3D7A882BE5666783B9 /* MV_NewMovver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ECB7F33C0F8F894078BDFFEBD16B50 /* MV_NewMovver.swift */; };
 		700952CD4BDFDEDE8DD2FAB8F592BAE1 /* Pods-movver-ios_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A330AB39AFE855B3976DED93F82A589A /* Pods-movver-ios_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7E6C58900C6B4331117E7F892503EC48 /* MOVVERTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2C0DD1BD70E658876527935C4B5DFA /* MOVVERTableViewDatasource.swift */; };
+		74F8B6120497D51C4A288909786A2705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		86D88B1F53D0A18B0DCD1880F5315992 /* Pods-movver-ios_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D474B5FD7CA5823B35E2BEFE89202BD3 /* Pods-movver-ios_Tests-dummy.m */; };
-		979476E397CD5C59D1D1997221E69804 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		9E78CF468F28DD9DFA06D91240678D65 /* MOVVERProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41604FA6CF6CFFA874E3D498570E29 /* MOVVERProtocols.swift */; };
-		A348693FE76382B760890CD3BEAC33F5 /* MOVVERDatasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D520758F9A88A56D49A8A95F7F5A89B /* MOVVERDatasources.swift */; };
-		C065BB191ED24492849FD014638E2521 /* Movver-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD0942EAA1F76291113743A4230B63C /* Movver-dummy.m */; };
-		C417D43D902275BE11A42373E7D1F521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		909D8C7BC273EAA54BF8F9A261CAEA5E /* MOVVERCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B17F49E6682697D150DB877C5EF82 /* MOVVERCollectionViewDatasource.swift */; };
+		9E094FB25B31837B38BFA8581DAD7C8E /* MOVVERDatasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFA628963167AF15CC598CEDA61BAA /* MOVVERDatasources.swift */; };
+		A967B1081A98FC4439D39730B5B310CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		C60C400D05B2EE7B5151CE0025F69B46 /* MOVVERTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1972AD72E28DDE4B5EEC968D42BF9B /* MOVVERTableViewDatasource.swift */; };
+		D53C6AD5BAB3F84DD71589F0A781839A /* Movver-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DB93118BC8C8A35E2E4E745165707B /* Movver-dummy.m */; };
+		D92EF24A74431D35F6DD1C6C099E134D /* Movver-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 706A3B34437867CDF8DE1534075AB592 /* Movver-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD48AAEC69DE0969F98B45C77E81DD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		E95763DDA00B3F44418EC6514EF78EC4 /* Pods-movver-ios_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79731AC958023ED7FBF279D2D6DAE6B8 /* Pods-movver-ios_Example-dummy.m */; };
-		EE67EEBAAC8834F3FB5AF87B6185D769 /* Movver-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32A08D84267321A56B9DBF530AA45633 /* Movver-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1C143E3F1AB2C305392566F4FCFBCC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		F885A6B676EAB394F8EF0FBAF884EB66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		F83AEDFA7E027651BC75BA27507F7884 /* MOVVERProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D02E201C2FAA4FB86C791DAB6D6FB4 /* MOVVERProtocols.swift */; };
 		FF742B35D92077A6150B7D5C4FFB24D4 /* Pods-movver-ios_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48324714536DB17EC53F5A399E464B6B /* Pods-movver-ios_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -28,7 +29,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1460D19DFDE2D49B88377067B03F69A0;
+			remoteGlobalIDString = E1116841E5CA0C9F59A5D93322511050;
 			remoteInfo = Movver;
 		};
 /* End PBXContainerItemProxy section */
@@ -36,57 +37,58 @@
 /* Begin PBXFileReference section */
 		059EDF4BEAAABB3718FD8FA5046D349D /* Pods-movver-ios_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movver-ios_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		09A6F5045B7C186C537C3F8F5FFADE78 /* Pods-movver-ios_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-movver-ios_Example.modulemap"; sourceTree = "<group>"; };
-		1D520758F9A88A56D49A8A95F7F5A89B /* MOVVERDatasources.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MOVVERDatasources.swift; sourceTree = "<group>"; };
+		108E82F3AFB2191039A40587893ABF85 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2127A5D4D78CC27B6DD707ACA81B1759 /* Pods_movver_ios_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_movver_ios_Tests.framework; path = "Pods-movver-ios_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		249086792235DBE4A3C06A7343882A70 /* Pods-movver-ios_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-movver-ios_Example-resources.sh"; sourceTree = "<group>"; };
-		2833DC43BF6C378DFACB5922A27F0C91 /* MOVVERCollectionViewDatasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MOVVERCollectionViewDatasource.swift; sourceTree = "<group>"; };
 		2B35261D36A20379ADF7C7EE9086EF72 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B3F5A4233CF020613C16C1F4D4824E0 /* Pods-movver-ios_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-movver-ios_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		2BA8D0490BAD9BF73C68EBBFD4F2F191 /* Movver.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Movver.modulemap; sourceTree = "<group>"; };
-		30A7F352689F744A4F8CE6A02E57937A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32A08D84267321A56B9DBF530AA45633 /* Movver-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Movver-umbrella.h"; sourceTree = "<group>"; };
 		39669F210FDBE7E0486E2D4B50B99A88 /* Pods-movver-ios_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-movver-ios_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3E4B17F49E6682697D150DB877C5EF82 /* MOVVERCollectionViewDatasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MOVVERCollectionViewDatasource.swift; path = "movver-ios/Classes/MOVVERCollectionViewDatasource.swift"; sourceTree = "<group>"; };
 		4349A3AD35F716C32CD3E923EBB9F78E /* Pods-movver-ios_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-movver-ios_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		45407796A24C7F5AAD27096E779CED6E /* Pods-movver-ios_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movver-ios_Example.release.xcconfig"; sourceTree = "<group>"; };
 		48324714536DB17EC53F5A399E464B6B /* Pods-movver-ios_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-movver-ios_Tests-umbrella.h"; sourceTree = "<group>"; };
 		487AF6E940D46B5DA5A1F48F99FAA6CD /* Pods-movver-ios_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-movver-ios_Tests.modulemap"; sourceTree = "<group>"; };
+		49ECB7F33C0F8F894078BDFFEBD16B50 /* MV_NewMovver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MV_NewMovver.swift; path = "movver-ios/Classes/MV_NewMovver.swift"; sourceTree = "<group>"; };
+		4DC625973C9704907D99C22E496A78B2 /* Movver-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Movver-prefix.pch"; sourceTree = "<group>"; };
 		54787542CB87F340071501765CF69EF5 /* Pods-movver-ios_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-movver-ios_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5503E433E958ADE8F33753A6D0C62792 /* Movver.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Movver.xcconfig; sourceTree = "<group>"; };
-		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6579841E782A15AF1014A14F3198F58D /* Movver-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Movver-prefix.pch"; sourceTree = "<group>"; };
+		63AFA628963167AF15CC598CEDA61BAA /* MOVVERDatasources.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MOVVERDatasources.swift; path = "movver-ios/Classes/MOVVERDatasources.swift"; sourceTree = "<group>"; };
+		66868A427BB463ADD1EE461D2E4D2B25 /* Movver.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Movver.modulemap; sourceTree = "<group>"; };
+		6A1972AD72E28DDE4B5EEC968D42BF9B /* MOVVERTableViewDatasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MOVVERTableViewDatasource.swift; path = "movver-ios/Classes/MOVVERTableViewDatasource.swift"; sourceTree = "<group>"; };
 		6A74926D5448C2A6433B8B9A2E9538F4 /* Movver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Movver.framework; path = Movver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		706A3B34437867CDF8DE1534075AB592 /* Movver-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Movver-umbrella.h"; sourceTree = "<group>"; };
 		79731AC958023ED7FBF279D2D6DAE6B8 /* Pods-movver-ios_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-movver-ios_Example-dummy.m"; sourceTree = "<group>"; };
-		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		84C4DE3430B85103D028ADDD5C673E8F /* Pods-movver-ios_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-movver-ios_Example-frameworks.sh"; sourceTree = "<group>"; };
 		864F071FA0DE7F02251B17CD7184652C /* Pods-movver-ios_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-movver-ios_Tests-resources.sh"; sourceTree = "<group>"; };
 		868230592A933A9DFE0B4BD68E9155EB /* Pods_movver_ios_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_movver_ios_Example.framework; path = "Pods-movver-ios_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C84FECBE2C7F82A700391F994E0689 /* Pods-movver-ios_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movver-ios_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B2C0DD1BD70E658876527935C4B5DFA /* MOVVERTableViewDatasource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MOVVERTableViewDatasource.swift; sourceTree = "<group>"; };
 		A23BEF7C4C2B49D1BB0B4B09118CB4B4 /* Pods-movver-ios_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movver-ios_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A330AB39AFE855B3976DED93F82A589A /* Pods-movver-ios_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-movver-ios_Example-umbrella.h"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C0DB93118BC8C8A35E2E4E745165707B /* Movver-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Movver-dummy.m"; sourceTree = "<group>"; };
+		C2D02E201C2FAA4FB86C791DAB6D6FB4 /* MOVVERProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MOVVERProtocols.swift; path = "movver-ios/Classes/MOVVERProtocols.swift"; sourceTree = "<group>"; };
 		D237F9167DAB51A21D003347EFC0B33A /* Pods-movver-ios_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-movver-ios_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D2CA93A295EAFA574B8240E07D18130E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D474B5FD7CA5823B35E2BEFE89202BD3 /* Pods-movver-ios_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-movver-ios_Tests-dummy.m"; sourceTree = "<group>"; };
-		DB41604FA6CF6CFFA874E3D498570E29 /* MOVVERProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MOVVERProtocols.swift; sourceTree = "<group>"; };
-		EFD0942EAA1F76291113743A4230B63C /* Movver-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Movver-dummy.m"; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DF54B9917B9D87CB182A4B1EBFB697A7 /* Movver.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Movver.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		28B777F258DA3C8A787E6F69E7BE189C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A967B1081A98FC4439D39730B5B310CA /* Foundation.framework in Frameworks */,
+				0209C556B5DC1DF0996397C613CD5095 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3436CCB2B792ECC0E2A5A373E1A49D0B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				979476E397CD5C59D1D1997221E69804 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C0A4634E7CE886EF4CD83DB91DE24DF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1C143E3F1AB2C305392566F4FCFBCC0 /* Foundation.framework in Frameworks */,
-				C417D43D902275BE11A42373E7D1F521 /* UIKit.framework in Frameworks */,
+				74F8B6120497D51C4A288909786A2705 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F885A6B676EAB394F8EF0FBAF884EB66 /* Foundation.framework in Frameworks */,
+				DD48AAEC69DE0969F98B45C77E81DD7B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,15 +121,23 @@
 			path = "Target Support Files/Pods-movver-ios_Tests";
 			sourceTree = "<group>";
 		};
-		08F0B553186ABB0BE448E64068387F93 /* Support Files */ = {
+		2209D80CD8CA5049F8B8E71182E1520C /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				30A7F352689F744A4F8CE6A02E57937A /* Info.plist */,
-				2BA8D0490BAD9BF73C68EBBFD4F2F191 /* Movver.modulemap */,
-				5503E433E958ADE8F33753A6D0C62792 /* Movver.xcconfig */,
-				EFD0942EAA1F76291113743A4230B63C /* Movver-dummy.m */,
-				6579841E782A15AF1014A14F3198F58D /* Movver-prefix.pch */,
-				32A08D84267321A56B9DBF530AA45633 /* Movver-umbrella.h */,
+				E0A7881A76C901DDDF413A37A1DE8BE4 /* Movver */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2ED43B16C17767B757C9C06AF5C3E702 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				108E82F3AFB2191039A40587893ABF85 /* Info.plist */,
+				66868A427BB463ADD1EE461D2E4D2B25 /* Movver.modulemap */,
+				DF54B9917B9D87CB182A4B1EBFB697A7 /* Movver.xcconfig */,
+				C0DB93118BC8C8A35E2E4E745165707B /* Movver-dummy.m */,
+				4DC625973C9704907D99C22E496A78B2 /* Movver-prefix.pch */,
+				706A3B34437867CDF8DE1534075AB592 /* Movver-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Movver";
@@ -145,25 +155,25 @@
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6A7A063930193BC4581874D8DE88C35B /* movver-ios */ = {
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F086EFD70E1F3AD879D6035FA0D3E807 /* Classes */,
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
 			);
-			name = "movver-ios";
-			path = "movver-ios";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				D326369AC7426AB0F1A4E1ED8646F66D /* Development Pods */,
+				2209D80CD8CA5049F8B8E71182E1520C /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				81EB03C09B1C2E604D94B3C61215F317 /* Products */,
 				3FF4261E4D3DDAB22B05A874E4EBA6D7 /* Targets Support Files */,
@@ -198,56 +208,23 @@
 			path = "Target Support Files/Pods-movver-ios_Example";
 			sourceTree = "<group>";
 		};
-		D326369AC7426AB0F1A4E1ED8646F66D /* Development Pods */ = {
+		E0A7881A76C901DDDF413A37A1DE8BE4 /* Movver */ = {
 			isa = PBXGroup;
 			children = (
-				EFF7AB512F9411137247EF08BD4C22ED /* Movver */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
-				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		EFF7AB512F9411137247EF08BD4C22ED /* Movver */ = {
-			isa = PBXGroup;
-			children = (
-				6A7A063930193BC4581874D8DE88C35B /* movver-ios */,
-				08F0B553186ABB0BE448E64068387F93 /* Support Files */,
+				3E4B17F49E6682697D150DB877C5EF82 /* MOVVERCollectionViewDatasource.swift */,
+				63AFA628963167AF15CC598CEDA61BAA /* MOVVERDatasources.swift */,
+				C2D02E201C2FAA4FB86C791DAB6D6FB4 /* MOVVERProtocols.swift */,
+				6A1972AD72E28DDE4B5EEC968D42BF9B /* MOVVERTableViewDatasource.swift */,
+				49ECB7F33C0F8F894078BDFFEBD16B50 /* MV_NewMovver.swift */,
+				2ED43B16C17767B757C9C06AF5C3E702 /* Support Files */,
 			);
 			name = Movver;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		F086EFD70E1F3AD879D6035FA0D3E807 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				2833DC43BF6C378DFACB5922A27F0C91 /* MOVVERCollectionViewDatasource.swift */,
-				1D520758F9A88A56D49A8A95F7F5A89B /* MOVVERDatasources.swift */,
-				DB41604FA6CF6CFFA874E3D498570E29 /* MOVVERProtocols.swift */,
-				9B2C0DD1BD70E658876527935C4B5DFA /* MOVVERTableViewDatasource.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		60BC7BCCAC3203EFF06602E1EE3A6C06 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EE67EEBAAC8834F3FB5AF87B6185D769 /* Movver-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		76F86FB79E9AC32C5C657DA0B55ACAED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,26 +241,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA880775E468149602323DD3EDC11BB1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92EF24A74431D35F6DD1C6C099E134D /* Movver-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1460D19DFDE2D49B88377067B03F69A0 /* Movver */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 73077C8CD870CCAC3C964FC2F6A7C060 /* Build configuration list for PBXNativeTarget "Movver" */;
-			buildPhases = (
-				7C8F0C638EB0A68DEFD39B9AA53A2161 /* Sources */,
-				9C0A4634E7CE886EF4CD83DB91DE24DF /* Frameworks */,
-				60BC7BCCAC3203EFF06602E1EE3A6C06 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Movver;
-			productName = Movver;
-			productReference = 6A74926D5448C2A6433B8B9A2E9538F4 /* Movver.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		2208F2B8DC6D91D05D61CE54F9EEEDD4 /* Pods-movver-ios_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD7C98E019C4BB31579DA450346A809E /* Build configuration list for PBXNativeTarget "Pods-movver-ios_Example" */;
@@ -319,13 +287,30 @@
 			productReference = 2127A5D4D78CC27B6DD707ACA81B1759 /* Pods_movver_ios_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		E1116841E5CA0C9F59A5D93322511050 /* Movver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60AACB01627B0EEDB461BC849D28C336 /* Build configuration list for PBXNativeTarget "Movver" */;
+			buildPhases = (
+				A9804E27D87B32999535ABD20538D246 /* Sources */,
+				28B777F258DA3C8A787E6F69E7BE189C /* Frameworks */,
+				DA880775E468149602323DD3EDC11BB1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Movver;
+			productName = Movver;
+			productReference = 6A74926D5448C2A6433B8B9A2E9538F4 /* Movver.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -340,7 +325,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1460D19DFDE2D49B88377067B03F69A0 /* Movver */,
+				E1116841E5CA0C9F59A5D93322511050 /* Movver */,
 				2208F2B8DC6D91D05D61CE54F9EEEDD4 /* Pods-movver-ios_Example */,
 				C15DA65E89CECCBFA40E711CFBB3538D /* Pods-movver-ios_Tests */,
 			);
@@ -348,23 +333,24 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7C8F0C638EB0A68DEFD39B9AA53A2161 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C065BB191ED24492849FD014638E2521 /* Movver-dummy.m in Sources */,
-				2787E37593BCF5D2D58B700C95FFFA27 /* MOVVERCollectionViewDatasource.swift in Sources */,
-				A348693FE76382B760890CD3BEAC33F5 /* MOVVERDatasources.swift in Sources */,
-				9E78CF468F28DD9DFA06D91240678D65 /* MOVVERProtocols.swift in Sources */,
-				7E6C58900C6B4331117E7F892503EC48 /* MOVVERTableViewDatasource.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9B4AEA97F2B0D3F14C87DD65C33DBA43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				86D88B1F53D0A18B0DCD1880F5315992 /* Pods-movver-ios_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9804E27D87B32999535ABD20538D246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D53C6AD5BAB3F84DD71589F0A781839A /* Movver-dummy.m in Sources */,
+				909D8C7BC273EAA54BF8F9A261CAEA5E /* MOVVERCollectionViewDatasource.swift in Sources */,
+				9E094FB25B31837B38BFA8581DAD7C8E /* MOVVERDatasources.swift in Sources */,
+				F83AEDFA7E027651BC75BA27507F7884 /* MOVVERProtocols.swift in Sources */,
+				C60C400D05B2EE7B5151CE0025F69B46 /* MOVVERTableViewDatasource.swift in Sources */,
+				33079FDDC29CAF3D7A882BE5666783B9 /* MV_NewMovver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,157 +368,17 @@
 		5CF34A7A849AD9FD2660E983C08258F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Movver;
-			target = 1460D19DFDE2D49B88377067B03F69A0 /* Movver */;
+			target = E1116841E5CA0C9F59A5D93322511050 /* Movver */;
 			targetProxy = 55C6555708F15184E16D8A42491B4C16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		06EB541096DE0D99ED7A9A80B5AE5C9C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D237F9167DAB51A21D003347EFC0B33A /* Pods-movver-ios_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Example/Pods-movver-ios_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_movver_ios_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		100E41CF98124DA911170C25132F5FF8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5503E433E958ADE8F33753A6D0C62792 /* Movver.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Movver/Movver-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Movver/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Movver/Movver.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Movver;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		242C6C9941BA80446ED36EBACBF3FB32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		8ECB234C2C456E803D982C0E3051D8E2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5503E433E958ADE8F33753A6D0C62792 /* Movver.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Movver/Movver-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Movver/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Movver/Movver.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Movver;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A1AF9F80C5AA444D7DF8860FC0DC0FD7 /* Debug */ = {
+		27B33EF9D94EF63780C0FA2D58A7D35B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88C84FECBE2C7F82A700391F994E0689 /* Pods-movver-ios_Tests.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -546,7 +392,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Tests/Pods-movver-ios_Tests.modulemap";
@@ -564,45 +410,11 @@
 			};
 			name = Debug;
 		};
-		C8990FB9184C47B3DA5E84BE09AA4454 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45407796A24C7F5AAD27096E779CED6E /* Pods-movver-ios_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Example/Pods-movver-ios_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_movver_ios_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		DE99AF27954DB64DD6BD1C6A84048DA2 /* Release */ = {
+		67D24B2721F7F166A8C6CEE61B74187D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A23BEF7C4C2B49D1BB0B4B09118CB4B4 /* Pods-movver-ios_Tests.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -616,7 +428,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Tests/Pods-movver-ios_Tests.modulemap";
@@ -634,11 +446,47 @@
 			};
 			name = Release;
 		};
-		EB10C108E296DEB376DFA4B409A568F9 /* Debug */ = {
+		6AE8A9B2ADE2F74221D10658E28C3F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF54B9917B9D87CB182A4B1EBFB697A7 /* Movver.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Movver/Movver-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Movver/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Movver/Movver.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Movver;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		97803B46811A9BDB5E70FA1303AFBFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -646,10 +494,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -670,11 +521,168 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A6C7A199B37462F94F5E0B0FE58D415C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF54B9917B9D87CB182A4B1EBFB697A7 /* Movver.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Movver/Movver-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Movver/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Movver/Movver.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Movver;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE43B6E2B08300636110AF576CB4D28F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45407796A24C7F5AAD27096E779CED6E /* Pods-movver-ios_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Example/Pods-movver-ios_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_movver_ios_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0C78458CAE2AB116384F1FF04015753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D237F9167DAB51A21D003347EFC0B33A /* Pods-movver-ios_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-movver-ios_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-movver-ios_Example/Pods-movver-ios_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_movver_ios_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -684,17 +692,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EB10C108E296DEB376DFA4B409A568F9 /* Debug */,
-				242C6C9941BA80446ED36EBACBF3FB32 /* Release */,
+				97803B46811A9BDB5E70FA1303AFBFFE /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73077C8CD870CCAC3C964FC2F6A7C060 /* Build configuration list for PBXNativeTarget "Movver" */ = {
+		60AACB01627B0EEDB461BC849D28C336 /* Build configuration list for PBXNativeTarget "Movver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8ECB234C2C456E803D982C0E3051D8E2 /* Debug */,
-				100E41CF98124DA911170C25132F5FF8 /* Release */,
+				A6C7A199B37462F94F5E0B0FE58D415C /* Debug */,
+				6AE8A9B2ADE2F74221D10658E28C3F28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -702,8 +710,8 @@
 		749AD348D8FD442AEBD88F4F15CE8642 /* Build configuration list for PBXNativeTarget "Pods-movver-ios_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1AF9F80C5AA444D7DF8860FC0DC0FD7 /* Debug */,
-				DE99AF27954DB64DD6BD1C6A84048DA2 /* Release */,
+				27B33EF9D94EF63780C0FA2D58A7D35B /* Debug */,
+				67D24B2721F7F166A8C6CEE61B74187D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -711,8 +719,8 @@
 		CD7C98E019C4BB31579DA450346A809E /* Build configuration list for PBXNativeTarget "Pods-movver-ios_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06EB541096DE0D99ED7A9A80B5AE5C9C /* Debug */,
-				C8990FB9184C47B3DA5E84BE09AA4454 /* Release */,
+				E0C78458CAE2AB116384F1FF04015753 /* Debug */,
+				AE43B6E2B08300636110AF576CB4D28F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -226,37 +226,30 @@ extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
 
 // MARK: Cell Helper
 
-open class MOVVER_TableViewCell:UITableViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
-    public func movver_tellViewModel(event: Any) {
-        self.movver_delegateViewModel.movver_VC_Call(event: event)
-    }
-
-
-    open  var movver_delegateViewModel:MOVVER_VM_Protocol!
-
-    open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
-        assertionFailure("ERROR: Implement this")
-    }
-    open func movver_VM_Call(event: Any){
-        assertionFailure("ERROR: Implement this")
-    }
-
+open class MOVVER_TableViewCell:UITableViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
+    open  var mv_generic_viewModel: mv_vm!
+	open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
+		assertionFailure("ERROR: Implement this")
+	}
+	
 }
 
 
 // MARK: Cell ViewModel Helper
 
-open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-    
-    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
-    public required init() {
-        super.init()
+open class MOVVER_TableCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+	public var movver_delegateView: mv_vc!
+	public var movver_delegateViewModel: mv_vm!
+
+	public var mv_generic_model: Any?
+	public var mv_generic_view: mv_vc!
+	public var mv_generic_router: mv_rt!
+	public required init() {
     }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
-        super.init()
+	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
         self.movver_delegateViewModel = delegateViewModel
-        self.movver_model = model
-        self.movver_delegateRouter = router
+        self.mv_generic_model = model
+        self.mv_generic_router = router
     }
 
     open func movver_identifier() -> String {

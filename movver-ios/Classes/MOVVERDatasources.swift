@@ -15,10 +15,10 @@ import Foundation
  These protocols accomplish the model and viewController protocols
  */
 
-public protocol MOVVER_VM_Datasource_Protocol:MOVVER_VM_Protocol {
-     var movver_delegateViewModel:   MOVVER_VM_Protocol! { get set }
-     var movver_delegateView:        MOVVER_VC_Protocol! { get set }
-    init(model:Any?, delegateViewModel: MOVVER_VM_Protocol, router:MOVVER_RT_Protocol)
+public protocol MOVVER_VM_Datasource_Protocol:mv_vm {
+     var movver_delegateViewModel:   mv_vm! { get set }
+     var movver_delegateView:        mv_vc! { get set }
+    init(model:Any?, delegateViewModel: mv_vm, router:mv_rt)
     func movver_identifier() -> String
 }
 
@@ -28,7 +28,7 @@ public protocol MOVVER_VM_DatasourcePreload_Protocol:MOVVER_VM_Datasource_Protoc
 }
 
 
-public protocol MOVVER_Cell_Datasource_Protocol:MOVVER_VC_Protocol {
+public protocol MOVVER_Cell_Datasource_Protocol:mv_vc {
     func movver_bind(viewModel:MOVVER_VM_Datasource_Protocol)
 }
 

@@ -9,55 +9,33 @@
 import UIKit
 import Movver
 
-class Router: MOVVER_RT{
-    
-    var unwrappedController:ViewController{
-        return self.movver_currentController as! ViewController
-    }
-    
-    
-    
-    override func movver_VM_Call(event: Any) {
-        let eventViewModel = event as! ViewModelToRouterEvents
-        switch eventViewModel {
-        case .showAlert(let alertString):
-            print("Alert \(alertString)")
-            
-            let alert = UIAlertController(title: "alert", message: alertString, preferredStyle: .alert);
-            let button = UIAlertAction(title: "OK", style: .cancel, handler: { (_) in
-                self.unwrappedController.dismiss(animated: true, completion: {
-                    
-                })
-            })
-            alert.addAction(button)
-            self.unwrappedController.present(alert, animated: true, completion: {
-                self.movver_tellViewModel(event: RouterToViewModelEvents.didShowAlert)
-            })
-        case .goToCollectionView:
-            print("Go to collection")
-            let newRouter = CollectionRouter()
-            self.unwrappedController.navigationController?.pushViewController(newRouter.movver_VC_Instantiate(model: nil,
-                                                                                                              viewModelClass:CollectionViewModel.self,
-                                                                                                              storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
-                                                                                                              identifier: "CollectionViewController",
-                                                                                                              previousRouter: self),
-                                                                              animated: true)
 
-        case .goToTableView:
-            print("Go to tableView")
-            let newRouter = TableRouter()
-            self.unwrappedController.navigationController?.pushViewController(newRouter.movver_VC_Instantiate(model: nil,
-                                                                                                              viewModelClass:TableViewModel.self,
-                                                                                                              storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
-                                                                                                              identifier: "TableViewController",
-                                                                                                              previousRouter: self),
-                                                                              animated: true)
-            
-            
-        }
-    }
+
+protocol RouterProtocol:mv_rt {
+	
 }
 
-class subRouter: Router {
-    
+class Router: mv_rt{
+	var mv_generic_previousRouter: mv_rt?
+	var mv_generic_view: mv_vc!
+	var mv_generic_viewModel: mv_vm!
 }
+
+
+extension Router: mv_router{
+	func mv_view() -> ViewControllerProtocol {
+		return self.mv_generic_view as! ViewControllerProtocol
+	}
+	func mv_viewModel() ->  ViewModelProtocol{
+		return self.mv_generic_viewModel as! ViewModelProtocol
+	}
+	func mv_previousRouter() -> Any? {
+		return nil
+	}
+}
+
+
+extension Router: RouterProtocol{
+	
+}
+

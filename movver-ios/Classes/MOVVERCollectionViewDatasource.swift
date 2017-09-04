@@ -201,55 +201,45 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 
 // MARK: Cell Helper
 
-open class MOVVER_CollectionViewCell:UICollectionViewCell,MOVVER_VC_Protocol,MOVVER_Cell_Datasource_Protocol{
-    public func movver_tellViewModel(event: Any) {
-        self.movver_delegateViewModel?.movver_VC_Call(event: event)
-    }
-
-    
-    open var movver_delegateViewModel:MOVVER_VM_Protocol!
-    
+open class MOVVER_CollectionViewCell:UICollectionViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
+	public var mv_generic_viewModel: mv_vm!
+    open var movver_delegateViewModel:mv_vm!
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }
-    open func movver_VM_Call(event: Any){
-        assertionFailure("ERROR: Implement this")
-    }
-    
 }
 
 // MARK: ReusableViewHelper
 
 open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
-    public func movver_tellViewModel(event: Any) {
-        self.movver_delegateViewModel?.movver_VC_Call(event: event)
-    }
+	public var mv_generic_viewModel: mv_vm!
 
-    open var movver_delegateViewModel:MOVVER_VM_Protocol!
+    open var movver_delegateViewModel:mv_vm!
     
     open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
         assertionFailure("ERROR: Implement this")
     }
-    open func movver_VM_Call(event: Any){
-        assertionFailure("ERROR: Implement this")
-    }
+	
 }
 
 
 
 // MARK: Cell ViewModel Helper
 
-open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
-    
+open class MOVVER_CollectionCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+	public var mv_generic_view: mv_vc!
+	public var mv_generic_router: mv_rt!
+	public var mv_generic_model: Any?
+	public var movver_delegateViewModel: mv_vm!
+	public var movver_delegateView: mv_vc!
+
     public required init() {
-        super.init()
+		
     }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
-        super.init()
+	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
         self.movver_delegateViewModel = delegateViewModel
-        self.movver_model = model
-        self.movver_delegateRouter = router
+        self.mv_generic_model = model
+        self.mv_generic_router = router
     }
     
     open func movver_identifier() -> String {
@@ -266,26 +256,30 @@ open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protoc
 
 // MARK: ReusableViewHelper ViewModel Helper
 
-open class MOVVER_ReusableViewModel: MOVVER_VM,MOVVER_ReusableViewModel_Datasource_Protocol {
-    public  var movver_delegateViewModel: MOVVER_VM_Protocol!
-    public required init() {
-        super.init()
-    }
-    public required init(model: Any?, delegateViewModel: MOVVER_VM_Protocol, router: MOVVER_RT_Protocol) {
-        super.init()
-        self.movver_delegateViewModel = delegateViewModel
-        self.movver_model = model
-        self.movver_delegateRouter = router
-    }
-        
-    open func movver_identifier() -> String {
-        assertionFailure("ERROR: Implement this")
-        return ""
-    }
-    open func movver_preload() {
-        print("Trying to preload \(self). Do you forget to implement this?")
-    }
-    open func movver_cancelPreloading() {
-        print("Trying to calcel preload \(self). Do you forget to implement this?")
-    }
+open class MOVVER_ReusableViewModel: mv_vm,MOVVER_ReusableViewModel_Datasource_Protocol {
+	public var mv_generic_view: mv_vc!
+	public var mv_generic_router: mv_rt!
+	public var mv_generic_model: Any?
+	public var movver_delegateViewModel: mv_vm!
+	public var movver_delegateView: mv_vc!
+	
+	public required init() {
+		
+	}
+	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
+		self.movver_delegateViewModel = delegateViewModel
+		self.mv_generic_model = model
+		self.mv_generic_router = router
+	}
+	
+	open func movver_identifier() -> String {
+		assertionFailure("ERROR: Implement this")
+		return ""
+	}
+	open func movver_preload() {
+		print("Trying to preload \(self). Do you forget to implement this?")
+	}
+	open func movver_cancelPreloading() {
+		print("Trying to cancel preload \(self). Do you forget to implement this?")
+	}
 }

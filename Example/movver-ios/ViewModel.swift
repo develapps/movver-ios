@@ -9,29 +9,33 @@
 import UIKit
 import Movver
 
-class ViewModel: MOVVER_VM {
-    
-    // MARK: ViewController call
-    
-    override func movver_VC_Call(event: Any) {
-        let eventVC:ViewControllerEvents = event as! ViewControllerEvents
-        switch eventVC {
-        case .pressedAlert:
-            self.movver_tellRouter(event: ViewModelToRouterEvents.showAlert("Alert Button Pressed"))
-        case .pressedCollection:
-            self.movver_tellRouter(event: ViewModelToRouterEvents.goToCollectionView)
-        case .pressedTable:
-            self.movver_tellRouter(event: ViewModelToRouterEvents.goToTableView)
-        }
-    }
-    
-    override func movver_RT_Call(event: Any) {
-        let eventRT:RouterToViewModelEvents = event as! RouterToViewModelEvents
-        switch eventRT {
-        case .didShowAlert:
-            self.movver_tellViewController(event: ViewModelToViewControllerEvents.changeButtonTitle("Alerted!"))
+protocol ViewModelProtocol:mv_vm{
+	
+}
 
-        }
+class ViewModel: mv_vm{
+	var mv_generic_model: Any?
+	var mv_generic_view: mv_vc!
+	var mv_generic_router: mv_rt!
+	required init() {
+		
+	}
+}
 
-    }
+
+extension ViewModel: mv_viewModel{
+	func mv_view() -> ViewControllerProtocol {
+		return self.mv_generic_view as! ViewControllerProtocol
+	}
+	func mv_model() -> Any? {
+		return self.mv_generic_model as Any?
+	}
+	func mv_router() -> RouterProtocol {
+		return self.mv_generic_router as! RouterProtocol
+	}
+}
+
+
+extension ViewModel: ViewModelProtocol{
+	
 }

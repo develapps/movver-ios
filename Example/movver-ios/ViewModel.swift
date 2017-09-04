@@ -9,18 +9,17 @@
 import UIKit
 import Movver
 
-protocol ViewModelProtocol:mv_vm{
+
+//--------------------------------------------------------
+// MARK: viewmodel class
+//--------------------------------------------------------
+class ViewModel: BaseViewModel{
 	
 }
 
-class ViewModel: mv_vm{
-	var mv_generic_model: Any?
-	var mv_generic_view: mv_vc!
-	var mv_generic_router: mv_rt!
-	required init() {
-		
-	}
-}
+//--------------------------------------------------------
+// MARK: MOVVER viewmodel concrete properties
+//--------------------------------------------------------
 
 
 extension ViewModel: mv_viewModel{
@@ -34,7 +33,17 @@ extension ViewModel: mv_viewModel{
 		return self.mv_generic_router as! RouterProtocol
 	}
 }
+//--------------------------------------------------------
+// MARK:  protocol to be implemented by the viewmodel
+//--------------------------------------------------------
 
+protocol ViewModelProtocol:mv_vm{
+	
+}
+
+//--------------------------------------------------------
+// MARK: implementation of the protocol
+//--------------------------------------------------------
 
 extension ViewModel: ViewModelProtocol{
 	

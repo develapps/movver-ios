@@ -8,6 +8,6 @@
 
 import Movver
 
-class PushedRouter: MOVVER_RT {
+class PushedRouter: BaseRouter {
 	
 }

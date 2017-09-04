@@ -8,6 +8,5 @@
 
 import Movver
 
-class TableRouter: MOVVER_RT {
-
+class TableRouter: BaseRouter {
 }

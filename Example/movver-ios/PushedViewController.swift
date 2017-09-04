@@ -10,6 +10,6 @@ import UIKit
 import Movver
 
 
-class PushedViewController: MOVVER_VC {
+class PushedViewController: BaseViewController {
 }
 

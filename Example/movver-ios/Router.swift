@@ -9,19 +9,16 @@
 import UIKit
 import Movver
 
-
-
-protocol RouterProtocol:mv_rt {
+//--------------------------------------------------------
+// MARK: router class
+//--------------------------------------------------------
+class Router: BaseRouter{
 	
 }
 
-class Router: mv_rt{
-	var mv_generic_previousRouter: mv_rt?
-	var mv_generic_view: mv_vc!
-	var mv_generic_viewModel: mv_vm!
-}
-
-
+//--------------------------------------------------------
+// MARK: MOVVER router concrete properties
+//--------------------------------------------------------
 extension Router: mv_router{
 	func mv_view() -> ViewControllerProtocol {
 		return self.mv_generic_view as! ViewControllerProtocol
@@ -34,6 +31,17 @@ extension Router: mv_router{
 	}
 }
 
+//--------------------------------------------------------
+// MARK:  protocol to be implemented by the router
+//--------------------------------------------------------
+
+protocol RouterProtocol:mv_rt {
+	
+}
+
+//--------------------------------------------------------
+// MARK: implementation of the protocol
+//--------------------------------------------------------
 
 extension Router: RouterProtocol{
 	

@@ -9,7 +9,39 @@
 import UIKit
 import Movver
 
+//--------------------------------------------------------
+// MARK: viewcontroller class
+//--------------------------------------------------------
+
+
+class ViewController: BaseViewController {
+	@IBOutlet weak var aButton: UIButton!
+
+}
+
+
+//--------------------------------------------------------
+// MARK: MOVVER viewcontroller concrete properties
+//--------------------------------------------------------
+
+extension ViewController: mv_view{
+	func mv_viewModel() -> ViewModelProtocol {
+		return self.mv_generic_viewModel as! ViewModelProtocol
+	}
+}
+
+//--------------------------------------------------------
+// MARK:  protocol to be implemented by the viewcontroller
+//--------------------------------------------------------
+
+
 protocol ViewControllerProtocol:mv_vc{
 	
 }
+//--------------------------------------------------------
+// MARK: implementation of the protocol
+//--------------------------------------------------------
 
+extension ViewController: ViewControllerProtocol {
+	
+}

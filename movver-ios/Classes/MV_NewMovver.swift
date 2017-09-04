@@ -57,17 +57,9 @@ public protocol mv_router: mv_rt{
 
 public protocol mv_rt_imp: mv_rt{
 	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?,  viewModel:inout VM_INSTANTIABLE, viewController:inout VC_INSTANTIABLE ,previousRouter:mv_rt?) where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
-	mutating func movver_VC_Instantiate<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModel:inout VM_INSTANTIABLE, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC_INSTANTIABLE where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
 }
 
 public extension mv_rt_imp{
-	mutating func movver_VC_Instantiate<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModel:inout VM_INSTANTIABLE, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC_INSTANTIABLE where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
-	{
-		// Instantiate View Controller
-		var viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC_INSTANTIABLE
-		self.movver_VC_Bind(model: model, viewModel: &viewModel, viewController: &viewController, previousRouter: previousRouter)
-		return viewController
-	}
 	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModel:inout VM_INSTANTIABLE, viewController:inout VC_INSTANTIABLE ,previousRouter:mv_rt?)  where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
 	{
 		// Save previous router

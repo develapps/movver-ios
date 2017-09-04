@@ -22,7 +22,7 @@ public protocol mv_vm:class{
 	var mv_generic_router: mv_rt! { get set }
 }
 
-public protocol mv_vc{
+public protocol mv_vc:class{
 	var mv_generic_viewModel: mv_vm! { get set }
 }
 
@@ -52,18 +52,27 @@ public protocol mv_router: mv_rt{
 
 
 public protocol mv_rt_imp: mv_rt{
-	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?,  viewModel:inout VM_INSTANTIABLE, viewController:inout VC_INSTANTIABLE ,previousRouter:mv_rt?) where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
+	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VM:mv_vm
+	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?,  viewModelClass:VM_INSTANTIABLE.Type, viewController:VC_INSTANTIABLE ,previousRouter:mv_rt?) where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
 }
 
 public extension mv_rt_imp{
-	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModel:inout VM_INSTANTIABLE, viewController:inout VC_INSTANTIABLE ,previousRouter:mv_rt?)  where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
+	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VM:mv_vm{
+		// Instantiate View Controller
+		let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
+		self.movver_VC_Bind(model: model, viewModelClass: viewModelClass, viewController: viewController, previousRouter: previousRouter)
+		return viewController
+	}
+
+	
+	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModelClass:VM_INSTANTIABLE.Type, viewController:VC_INSTANTIABLE ,previousRouter:mv_rt?)  where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
 	{
 		// Save previous router
 		
 		self.mv_generic_previousRouter = previousRouter
 		
 		// Create VM and pass the model, the router and controller
-		
+		let viewModel = VM_INSTANTIABLE()
 		viewModel.mv_generic_model = model
 		viewModel.mv_generic_view = viewController
 		viewModel.mv_generic_router = self

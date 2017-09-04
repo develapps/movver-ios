@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		window = UIWindow(frame: UIScreen.main.bounds)
 		self.router = Router()
-		var vm = ViewModel()
-		var vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as! ViewController
-		self.router.movver_VC_Bind(model: nil,
-		                           viewModel: &vm,
-		                           viewController: &vc,
-		                           previousRouter: nil)
+		let vc:ViewController = self.router.movver_VC_Instantiate(model: nil,
+		                                           viewModelClass: ViewModel.self,
+		                                           storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
+		                                           identifier: "ViewController",
+		                                           previousRouter: nil)
+		
 		let nv = UINavigationController()
 		nv.addChildViewController(vc)
 		self.window?.rootViewController = nv

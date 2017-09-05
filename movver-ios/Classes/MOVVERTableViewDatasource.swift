@@ -16,32 +16,32 @@ public protocol MOVVER_TableCell_Datasource {
 }
 
 public protocol MOVVER_TableVM_Datasource {
-    func movver_tableDatasource(numberOfCellsInSection section: Int) -> Int
-    func movver_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol
-    func movver_tableDatasource_numberOfSections() -> Int
+    func mv_tableDatasource(numberOfCellsInSection section: Int) -> Int
+    func mv_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol
+    func mv_tableDatasource_numberOfSections() -> Int
     
-    func movver_tableDatasource(titleForHeaderInSection section: Int) -> String?
-    func movver_tableDatasource(titleForFooterInSection section: Int) -> String?
+    func mv_tableDatasource(titleForHeaderInSection section: Int) -> String?
+    func mv_tableDatasource(titleForFooterInSection section: Int) -> String?
     
-    func movver_tableDatasource(canEditRowAt indexPath: IndexPath) -> Bool
-    func movver_tableDatasource(canMoveCellAt indexPath: IndexPath) -> Bool
-    func movver_tableDatasource(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+    func mv_tableDatasource(canEditRowAt indexPath: IndexPath) -> Bool
+    func mv_tableDatasource(canMoveCellAt indexPath: IndexPath) -> Bool
+    func mv_tableDatasource(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
     
-    func movver_tableDatasource_sectionIndexTitles() -> [String]?
-    func movver_tableDatasource(sectionForSectionIndexTitle title: String, at index: Int) -> Int
+    func mv_tableDatasource_sectionIndexTitles() -> [String]?
+    func mv_tableDatasource(sectionForSectionIndexTitle title: String, at index: Int) -> Int
     
-    func movver_tableDatasource(commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    func mv_tableDatasource(commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     
 }
 
 public protocol MOVVER_TableVM_DatasourcePrefetching {
-    func movver_tableDatasource(prefetchRowsAt: [IndexPath])
-    func movver_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath])
+    func mv_tableDatasource(prefetchRowsAt: [IndexPath])
+    func mv_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath])
 }
 
 public protocol MOVVER_TableViewDataSourceDelegate {
-    func movver_delegate(datasource: MOVVER_TableCell_Datasource, preBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
-    func movver_delegate(datasource: MOVVER_TableCell_Datasource, postBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
+    func mv_delegate(datasource: MOVVER_TableCell_Datasource, preBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
+    func mv_delegate(datasource: MOVVER_TableCell_Datasource, postBindCell: MOVVER_Cell_Datasource_Protocol, atIndexPath:IndexPath)
 }
 
 
@@ -66,7 +66,7 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
     
     
     open func numberOfSections(in tableView: UITableView) -> Int {
-        let sectionCount = self.viewModelDataSource?.movver_tableDatasource_numberOfSections()
+        let sectionCount = self.viewModelDataSource?.mv_tableDatasource_numberOfSections()
         if (sectionCount==0) {
             if  (self.noDataView != nil ) &&
                 (tableView.backgroundView != self.noDataView)
@@ -84,20 +84,20 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
     
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return viewModelDataSource?.movver_tableDatasource(numberOfCellsInSection: section) ?? 0
+        return viewModelDataSource?.mv_tableDatasource(numberOfCellsInSection: section) ?? 0
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        if let viewModel = self.viewModelDataSource?.movver_tableDatasource(viewModelForCellAt: indexPath) {
+        if let viewModel = self.viewModelDataSource?.mv_tableDatasource(viewModelForCellAt: indexPath) {
             
-            let identifier = viewModel.movver_identifier()
+            let identifier = viewModel.mv_identifier()
             let cell:C = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! C
             
-            self.datasourceDelegate?.movver_delegate(datasource: self, preBindCell: cell, atIndexPath: indexPath)
-            cell.movver_bind(viewModel: viewModel)
-			viewModel.movver_delegateView = cell
-            self.datasourceDelegate?.movver_delegate(datasource: self, postBindCell: cell, atIndexPath: indexPath)
+            self.datasourceDelegate?.mv_delegate(datasource: self, preBindCell: cell, atIndexPath: indexPath)
+            cell.mv_bind(viewModel: viewModel)
+			viewModel.mv_generic_view = cell
+            self.datasourceDelegate?.mv_delegate(datasource: self, postBindCell: cell, atIndexPath: indexPath)
             return cell
         }
         return UITableViewCell()
@@ -105,35 +105,35 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
     
     
     open  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
-        return self.viewModelDataSource?.movver_tableDatasource(titleForHeaderInSection: section)
+        return self.viewModelDataSource?.mv_tableDatasource(titleForHeaderInSection: section)
     }
     open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?{
-        return self.viewModelDataSource?.movver_tableDatasource(titleForFooterInSection: section)
+        return self.viewModelDataSource?.mv_tableDatasource(titleForFooterInSection: section)
     }
     
    open func sectionIndexTitles(for tableView: UITableView) -> [String]?
     {
-        return self.viewModelDataSource?.movver_tableDatasource_sectionIndexTitles() ?? nil
+        return self.viewModelDataSource?.mv_tableDatasource_sectionIndexTitles() ?? nil
     }
     open func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int{
-        return self.viewModelDataSource?.movver_tableDatasource(sectionForSectionIndexTitle: title, at: index) ?? 0
+        return self.viewModelDataSource?.mv_tableDatasource(sectionForSectionIndexTitle: title, at: index) ?? 0
     }
     open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
-        self.viewModelDataSource?.movver_tableDatasource(commit: editingStyle, forRowAt: indexPath)
+        self.viewModelDataSource?.mv_tableDatasource(commit: editingStyle, forRowAt: indexPath)
     }
     open func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
     {
-        self.viewModelDataSource?.movver_tableDatasource(moveRowAt: sourceIndexPath, to: destinationIndexPath)
+        self.viewModelDataSource?.mv_tableDatasource(moveRowAt: sourceIndexPath, to: destinationIndexPath)
     }
     
     
     open func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool{
-        return (self.viewModelDataSource?.movver_tableDatasource(canEditRowAt: indexPath)) ?? false
+        return (self.viewModelDataSource?.mv_tableDatasource(canEditRowAt: indexPath)) ?? false
     }
     
     open func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool{
-        return (self.viewModelDataSource?.movver_tableDatasource(canMoveCellAt: indexPath)) ?? false
+        return (self.viewModelDataSource?.mv_tableDatasource(canMoveCellAt: indexPath)) ?? false
     }
     
     
@@ -141,12 +141,12 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
     
     open func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         guard let prefetchingDatasource = self.viewModelDataSource as? MOVVER_TableVM_DatasourcePrefetching else { return }
-        prefetchingDatasource.movver_tableDatasource(prefetchRowsAt: indexPaths)
+        prefetchingDatasource.mv_tableDatasource(prefetchRowsAt: indexPaths)
     }
     
     open func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         guard let prefetchingDatasource = self.viewModelDataSource as? MOVVER_TableVM_DatasourcePrefetching else { return }
-        prefetchingDatasource.movver_tableDatasource(cancelPrefetchingForRowsAt: indexPaths)
+        prefetchingDatasource.mv_tableDatasource(cancelPrefetchingForRowsAt: indexPaths)
     }
     
     
@@ -155,66 +155,66 @@ open class MOVVER_TableViewDataSource<C>:NSObject,UITableViewDataSource,MOVVER_T
 // MARK: Extension to implement automatically all the datasource methods so they are not mandatory
 
 extension MOVVER_TableVM_Datasource{
-	public func movver_tableDatasource(numberOfCellsInSection section: Int) -> Int {
+	public func mv_tableDatasource(numberOfCellsInSection section: Int) -> Int {
 		return 0
 	}
-	public func movver_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol {
+	public func mv_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol {
 		return MOVVER_TableCellViewModel()
 	}
-	public func movver_tableDatasource_numberOfSections() -> Int{
+	public func mv_tableDatasource_numberOfSections() -> Int{
 		return 0
 	}
 	
 	// No implementation for this
 	
-	public func movver_tableDatasource(titleForHeaderInSection section: Int) -> String? { return nil }
-	public func movver_tableDatasource(titleForFooterInSection section: Int) -> String? { return nil }
-	public func movver_tableDatasource(canEditRowAt indexPath: IndexPath) -> Bool { return false }
-	public func movver_tableDatasource(canMoveCellAt indexPath: IndexPath) -> Bool { return false }
-	public func movver_tableDatasource(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
-	public func movver_tableDatasource_sectionIndexTitles() -> [String]? { return nil }
-	public func movver_tableDatasource(sectionForSectionIndexTitle title: String, at index: Int) -> Int { return 0 }
-	public func movver_tableDatasource(commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {  }
+	public func mv_tableDatasource(titleForHeaderInSection section: Int) -> String? { return nil }
+	public func mv_tableDatasource(titleForFooterInSection section: Int) -> String? { return nil }
+	public func mv_tableDatasource(canEditRowAt indexPath: IndexPath) -> Bool { return false }
+	public func mv_tableDatasource(canMoveCellAt indexPath: IndexPath) -> Bool { return false }
+	public func mv_tableDatasource(moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) { }
+	public func mv_tableDatasource_sectionIndexTitles() -> [String]? { return nil }
+	public func mv_tableDatasource(sectionForSectionIndexTitle title: String, at index: Int) -> Int { return 0 }
+	public func mv_tableDatasource(commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {  }
 }
 
 // MARK: Extension to implement automatically all the prefetch methods so they are not mandatory
 
 extension MOVVER_TableVM_DatasourcePrefetching{
-	public func movver_tableDatasource(prefetchRowsAt: [IndexPath]) { return }
-	public func movver_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath])  { return }
+	public func mv_tableDatasource(prefetchRowsAt: [IndexPath]) { return }
+	public func mv_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath])  { return }
 	
 }
 
 // MARK: Array helper
 
 extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
-    public func movver_tableDatasource(numberOfCellsInSection section: Int) -> Int {
+    public func mv_tableDatasource(numberOfCellsInSection section: Int) -> Int {
         return self.count
     }
-    public func movver_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol {
+    public func mv_tableDatasource(viewModelForCellAt indexPath: IndexPath) -> MOVVER_VM_Datasource_Protocol {
         let viewModel:MOVVER_VM_Datasource_Protocol = self[indexPath.row] as! MOVVER_VM_Datasource_Protocol
         return viewModel
     }
-    public func movver_tableDatasource_numberOfSections() -> Int{
+    public func mv_tableDatasource_numberOfSections() -> Int{
         return self.count>0 ? 1 : 0
     }
 	
     
-    public func movver_tableDatasource(prefetchRowsAt: [IndexPath]) {
+    public func mv_tableDatasource(prefetchRowsAt: [IndexPath]) {
         for indexPath in prefetchRowsAt
         {
             if let viewModel = self[indexPath.row] as? MOVVER_VM_DatasourcePreload_Protocol {
-                viewModel.movver_preload()
+                viewModel.mv_preload()
             }
 
         }
 
     }
-    public func movver_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath]) {
+    public func mv_tableDatasource(cancelPrefetchingForRowsAt: [IndexPath]) {
         for indexPath in cancelPrefetchingForRowsAt
         {
             if let viewModel = self[indexPath.row] as? MOVVER_VM_DatasourcePreload_Protocol {
-                viewModel.movver_cancelPreloading()
+                viewModel.mv_cancelPreloading()
             }
 
         }
@@ -228,19 +228,7 @@ extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
 
 open class MOVVER_TableViewCell:UITableViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
     open var mv_generic_viewModel: mv_vm!
-	open var movver_delegateViewModel: MOVVER_TableCellViewModel?{
-		get{
-			return self.mv_generic_viewModel as? MOVVER_TableCellViewModel
-		}
-		set{
-			self.mv_generic_viewModel = movver_delegateViewModel
-		}
-	}
-	public func movver_tellViewModel(event: Any) {
-		self.movver_delegateViewModel?.movver_VC_Call(event: event)
-	}
-
-	open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
+	open func mv_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
 		assertionFailure("ERROR: Implement this")
 	}
 	
@@ -249,28 +237,31 @@ open class MOVVER_TableViewCell:UITableViewCell,mv_vc,MOVVER_Cell_Datasource_Pro
 
 // MARK: Cell ViewModel Helper
 
-open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-	public var movver_delegateView: mv_vc!
-	public var movver_delegateViewModel: mv_vm!
+open class MOVVER_TableCellViewModel: mv_vm,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
+	
+	public var mv_delegateViewModel: mv_vm!
 
+	public var mv_generic_router: mv_rt!
+	public var mv_generic_view: mv_vc!
+	public var mv_generic_model: Any?
+	
+	
 	public required init() {
-		super.init()
     }
 	public required init(model:Any?, delegateViewModel: mv_vm, router:mv_rt){
-		super.init()
-        self.movver_delegateViewModel = delegateViewModel
+        self.mv_delegateViewModel = delegateViewModel
         self.mv_generic_model = model
         self.mv_generic_router = router
     }
 
-    open func movver_identifier() -> String {
+    open func mv_identifier() -> String {
         assertionFailure("ERROR: Implement this")
         return ""
     }
-    open func movver_preload() {
+    open func mv_preload() {
         print("Trying to preload \(self). Did you forget to implement this?")
     }
-    open func movver_cancelPreloading() {
+    open func mv_cancelPreloading() {
         print("Trying to cancel preload \(self). Did you forget to implement this?")
     }
 }

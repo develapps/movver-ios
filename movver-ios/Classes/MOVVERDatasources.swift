@@ -16,20 +16,30 @@ import Foundation
  */
 
 public protocol MOVVER_VM_Datasource_Protocol:mv_vm {
-     var movver_delegateViewModel:   mv_vm! { get set }
-     var movver_delegateView:        mv_vc! { get set }
+	var mv_delegateViewModel:   mv_vm! { get set }
     init(model:Any?, delegateViewModel: mv_vm, router:mv_rt)
-    func movver_identifier() -> String
+    func mv_identifier() -> String
 }
 
 public protocol MOVVER_VM_DatasourcePreload_Protocol:MOVVER_VM_Datasource_Protocol {
-    func movver_preload()
-    func movver_cancelPreloading()
+    func mv_preload()
+    func mv_cancelPreloading()
 }
 
 
 public protocol MOVVER_Cell_Datasource_Protocol:mv_vc {
-    func movver_bind(viewModel:MOVVER_VM_Datasource_Protocol)
+    func mv_bind(viewModel:MOVVER_VM_Datasource_Protocol)
 }
 
 
+/// A protocol to specify the type of the generic storage properties
+public protocol mv_cellviewModel: mv_viewModel{
+	associatedtype DELEGATEVM
+	associatedtype RT
+	associatedtype MODEL
+	
+	/// The concrete delegate ViewModel
+	///
+	/// - Returns: returns a concrete viewModel
+	func mv_delegateViewModel()-> DELEGATEVM
+}

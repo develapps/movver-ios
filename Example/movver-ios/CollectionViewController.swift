@@ -17,7 +17,7 @@ class CollectionViewController: MOVVER_VC {
     var collectionViewDataSource : MOVVER_CollectionViewDataSource<MOVVER_CollectionViewCell,MOVVER_ReusableView>?
     var unwrappedViewModel:CollectionViewModel{
         get{
-            return self.movver_delegateViewModel as! CollectionViewModel
+            return self.mv_generic_viewModel as! CollectionViewModel
         }
     }
     

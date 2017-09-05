@@ -9,55 +9,104 @@
 import UIKit
 
 
+/// Router storage
 public protocol mv_rt{
-	var mv_generic_view: mv_vc! { get set }
-	var mv_generic_viewModel: mv_vm! { get set }
+	/// Current View or view controller
+	weak var mv_generic_view: mv_vc! { get set }
+	
+	/// The associated viewModel
+	weak var mv_generic_viewModel: mv_vm! { get set }
+	
+	/// The previous router
 	var mv_generic_previousRouter: mv_rt? { get set }
 }
 
+/// The viewModel storage
 public protocol mv_vm:class{
+	/// We must be able to instantiate it generically
 	init()
+	
+	/// The model, if any
 	var mv_generic_model: Any? { get set }
-	var mv_generic_view: mv_vc! { get set }
+	
+	/// The view associated with the viewModel
+	weak var mv_generic_view: mv_vc! { get set }
+	
+	/// The router
 	var mv_generic_router: mv_rt! { get set }
 }
 
+
+/// The viewController storage
 public protocol mv_vc:class{
+	
+	/// The viewModel of the viewController
 	var mv_generic_viewModel: mv_vm! { get set }
 }
 
+/// A protocol to specify the type of the generic storage properties
 public protocol mv_view: mv_vc{
 	associatedtype VM
+	
+	/// The view concrete viewModel
+	///
+	/// - Returns: the view model
 	func mv_viewModel()-> VM
 }
 
+/// A protocol to specify the type of the generic storage properties
 public protocol mv_viewModel: mv_vm{
 	associatedtype VC
 	associatedtype RT
 	associatedtype MODEL
+	
+	/// The concrete view
+	///
+	/// - Returns: returns a concrete view
 	func mv_view()-> VC
+	
+	/// The concrete router
+	///
+	/// - Returns: returns a concrete router
 	func mv_router()-> RT
+	
+	/// The concrete model
+	///
+	/// - Returns: returns the concrete type of the model
 	func mv_model()-> MODEL?
 }
-
+/// A protocol to specify the type of the generic storage properties
 public protocol mv_router: mv_rt{
 	associatedtype VC
 	associatedtype RT
 	associatedtype VM
+	/// The concrete view
+	///
+	/// - Returns: returns a concrete view
 	func mv_view() -> VC
+	/// The view concrete viewModel
+	///
+	/// - Returns: the view model
 	func mv_viewModel() -> VM
+	/// The concrete previous router
+	///
+	/// - Returns: returns a concrete previous router
 	func mv_previousRouter() -> RT?
 }
 
 
 
+
+/// This implements the instatiation of each case with router, model, viewmodel and controller
 public protocol mv_rt_imp: mv_rt{
-	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VM:mv_vm
-	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?,  viewModelClass:VM_INSTANTIABLE.Type, viewController:VC_INSTANTIABLE ,previousRouter:mv_rt?) where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
+	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VC:UIViewController,VM:mv_vm
+	mutating func movver_VC_Bind<VC,VM>(model:Any?,  viewModelClass:VM.Type, viewController:VC ,previousRouter:mv_rt?) where VC:mv_vc,VC:UIViewController,VM:mv_vm
 }
 
+
+// MARK: - public implementation
 public extension mv_rt_imp{
-	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VM:mv_vm{
+	mutating func movver_VC_Instantiate<VC,VM>(model:Any?, viewModelClass:VM.Type, storyboard:UIStoryboard,identifier:String,previousRouter:mv_rt?) -> VC where VC:mv_vc,VC:UIViewController,VM:mv_vm{
 		// Instantiate View Controller
 		let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! VC
 		self.movver_VC_Bind(model: model, viewModelClass: viewModelClass, viewController: viewController, previousRouter: previousRouter)
@@ -65,14 +114,14 @@ public extension mv_rt_imp{
 	}
 
 	
-	mutating func movver_VC_Bind<VC_INSTANTIABLE,VM_INSTANTIABLE>(model:Any?, viewModelClass:VM_INSTANTIABLE.Type, viewController:VC_INSTANTIABLE ,previousRouter:mv_rt?)  where VC_INSTANTIABLE:mv_vc,VM_INSTANTIABLE:mv_vm
+	mutating func movver_VC_Bind<VC,VM>(model:Any?,  viewModelClass:VM.Type, viewController:VC ,previousRouter:mv_rt?) where VC:mv_vc,VC:UIViewController,VM:mv_vm
 	{
 		// Save previous router
 		
 		self.mv_generic_previousRouter = previousRouter
 		
 		// Create VM and pass the model, the router and controller
-		let viewModel = VM_INSTANTIABLE()
+		let viewModel = VM()
 		viewModel.mv_generic_model = model
 		viewModel.mv_generic_view = viewController
 		viewModel.mv_generic_router = self
@@ -111,6 +160,8 @@ public protocol mv_DeepLinking_Protocol{
 }
 
 
+
+/// Default implementation of the protocol
 public extension mv_DeepLinking_Protocol{
 	func movver_canRouteTo(url: URL) -> Bool{
 		return false
@@ -123,40 +174,14 @@ public extension mv_DeepLinking_Protocol{
 
 
 //--------------------------------------------------------
-// MARK: helper classes -> This makes this version compatible with old versions
+// MARK: helper classes -> This classes implement basic functionality and store properties
 //--------------------------------------------------------
-
-
-// MARK: _RT_
 
 open class MOVVER_RT:mv_rt,mv_rt_imp,mv_DeepLinking_Protocol {
 	public var mv_generic_view: mv_vc!
 	public var mv_generic_viewModel: mv_vm!
 	public var mv_generic_previousRouter: mv_rt?
-	// This ensures compatibility
-	public var movver_previousRouter:mv_rt{
-		get{
-			return self.movver_previousRouter
-		}
-		set{
-			self.mv_generic_previousRouter = movver_previousRouter
-		}
-	}
-	public var movver_currentController:mv_vc{
-		return self.mv_generic_view
-	}
-	public var movver_viewModel:mv_vm{
-		return self.mv_generic_viewModel
-	}
 	public init() {}
-	open func movver_VM_Call(event: Any){
-		preconditionFailure("MOVVER: You must implement this")
-	}
-	public func movver_tellViewModel(event: Any) {
-		if let vm = self.mv_generic_viewModel as? MOVVER_VM{
-			vm.movver_RT_Call(event: event)
-		}
-	}
 	open func mv_canRouteTo(url: URL) -> Bool{
 		return false
 	}
@@ -171,16 +196,6 @@ open class MOVVER_VM:mv_vm {
 	public var mv_generic_model: Any?
 	public var mv_generic_router: mv_rt!
 	
-	// This ensures compatibility
-	public var movver_delegateRouter:mv_rt{
-		return self.mv_generic_router
-	}
-	public var movver_model:Any?{
-		return self.mv_generic_model
-	}
-	public var movver_delegateViewController:mv_vc{
-		return self.mv_generic_view
-	}
 	
 	public required init() {}
 	public init(model:Any?, delegate: mv_vc, router:mv_rt){
@@ -188,45 +203,12 @@ open class MOVVER_VM:mv_vm {
 		self.mv_generic_view = delegate
 		self.mv_generic_router = router
 	}
-	open func movver_VC_Call(event: Any){
-		preconditionFailure("MOVVER: You must implement this")
-	}
-	public func movver_tellViewController(event: Any) {
-		if let vc = self.mv_generic_view as? MOVVER_VC {
-			vc.movver_VM_Call(event: event)
-		}
-	}
-	
-	open func movver_RT_Call(event: Any){
-		preconditionFailure("MOVVER: You must implement this")
-	}
-	public func movver_tellRouter(event: Any) {
-		if let rt = self.mv_generic_router as? MOVVER_RT{
-			rt.movver_VM_Call(event: event)
-		}
-	}
-	
-	
 }
 
 
 
 open class MOVVER_VC:UIViewController,mv_vc{
 	public var mv_generic_viewModel: mv_vm!
-	// This ensures compatibility
-	public var movver_delegateViewModel:mv_vm{
-		return self.mv_generic_viewModel
-	}
-	
-	open func movver_VM_Call(event: Any){
-		preconditionFailure("MOVVER: You must implement this")
-	}
-	public func movver_tellViewModel(event: Any) {
-		if let vm = self.mv_generic_viewModel as? MOVVER_VM
-		{
-			vm.movver_VC_Call(event: event)
-		}
-	}
 }
 
 

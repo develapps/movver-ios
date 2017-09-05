@@ -9,7 +9,7 @@
 import Movver
 
 class MovverTableViewModel: MOVVER_TableCellViewModel {
-    override func movver_identifier() -> String {
+    override func mv_identifier() -> String {
 		return String(describing:MovverTableCell.self)
     }
 }

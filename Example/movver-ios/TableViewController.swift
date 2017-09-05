@@ -15,7 +15,7 @@ class TableViewController: MOVVER_VC {
     var tableViewDataSource : MOVVER_TableViewDataSource<MOVVER_TableViewCell>?
     var unwrappedViewModel:TableViewModel{
         get{
-            return self.movver_delegateViewModel as! TableViewModel
+            return self.mv_generic_viewModel as! TableViewModel
         }
     }
 

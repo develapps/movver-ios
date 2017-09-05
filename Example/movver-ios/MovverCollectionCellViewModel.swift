@@ -11,7 +11,7 @@
 import Movver
 
 class MovverCollectionCellViewModel: MOVVER_CollectionCellViewModel {
-    override func movver_identifier() -> String {
+    override func mv_identifier() -> String {
         return "MovverCollectionCell"
     }
 }

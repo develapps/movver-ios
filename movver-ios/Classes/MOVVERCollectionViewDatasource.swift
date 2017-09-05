@@ -203,13 +203,16 @@ extension Array:MOVVER_CollectionVM_Datasource,MOVVER_CollectionVM_DatasourcePre
 
 open class MOVVER_CollectionViewCell:UICollectionViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
 	open var mv_generic_viewModel: mv_vm!
-	open var movver_delegateViewModel: mv_vm{
+	open var movver_delegateViewModel: MOVVER_CollectionCellViewModel?{
 		get{
-			return self.mv_generic_viewModel
+			return self.mv_generic_viewModel as? MOVVER_CollectionCellViewModel
 		}
 		set{
 			self.mv_generic_viewModel = movver_delegateViewModel
 		}
+	}
+	public func movver_tellViewModel(event: Any) {
+		self.movver_delegateViewModel?.movver_VC_Call(event: event)
 	}
 	open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
 		assertionFailure("ERROR: Implement this")
@@ -220,15 +223,17 @@ open class MOVVER_CollectionViewCell:UICollectionViewCell,mv_vc,MOVVER_Cell_Data
 
 open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Datasource_Protocol {
 	open var mv_generic_viewModel: mv_vm!
-	open var movver_delegateViewModel: mv_vm{
+	open var movver_delegateViewModel: MOVVER_ReusableViewModel?{
 		get{
-			return self.mv_generic_viewModel
+			return self.mv_generic_viewModel as? MOVVER_ReusableViewModel
 		}
 		set{
 			self.mv_generic_viewModel = movver_delegateViewModel
 		}
 	}
-	
+	public func movver_tellViewModel(event: Any) {
+		self.movver_delegateViewModel?.movver_VC_Call(event: event)
+	}
 	open func movver_bind(viewModel: MOVVER_VM_Datasource_Protocol) {
 		assertionFailure("ERROR: Implement this")
 	}
@@ -240,8 +245,8 @@ open class MOVVER_ReusableView: UICollectionReusableView,MOVVER_ReusableView_Dat
 // MARK: Cell ViewModel Helper
 
 open class MOVVER_CollectionCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MOVVER_VM_DatasourcePreload_Protocol {
-	public var movver_delegateViewModel: mv_vm!
 	public var movver_delegateView: mv_vc!
+	public var movver_delegateViewModel: mv_vm!
 	
 	public required init() {
 		super.init()

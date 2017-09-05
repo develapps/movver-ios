@@ -135,7 +135,12 @@ open class MOVVER_RT:mv_rt,mv_rt_imp,mv_DeepLinking_Protocol {
 	public var mv_generic_previousRouter: mv_rt?
 	// This ensures compatibility
 	public var movver_previousRouter:mv_rt{
-		return self.movver_previousRouter
+		get{
+			return self.movver_previousRouter
+		}
+		set{
+			self.mv_generic_previousRouter = movver_previousRouter
+		}
 	}
 	public var movver_currentController:mv_vc{
 		return self.mv_generic_view

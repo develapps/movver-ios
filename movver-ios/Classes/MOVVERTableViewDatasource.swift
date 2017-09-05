@@ -227,7 +227,7 @@ extension Array:MOVVER_TableVM_Datasource,MOVVER_TableVM_DatasourcePrefetching{
 // MARK: Cell Helper
 
 open class MOVVER_TableViewCell:UITableViewCell,mv_vc,MOVVER_Cell_Datasource_Protocol{
-    open  var mv_generic_viewModel: mv_vm!
+    open var mv_generic_viewModel: mv_vm!
 	open var movver_delegateViewModel: mv_vm{
 		get{
 			return self.mv_generic_viewModel
@@ -264,10 +264,10 @@ open class MOVVER_TableCellViewModel: MOVVER_VM,MOVVER_VM_Datasource_Protocol,MO
         return ""
     }
     open func movver_preload() {
-        print("Trying to preload \(self). Do you forget to implement this?")
+        print("Trying to preload \(self). Did you forget to implement this?")
     }
     open func movver_cancelPreloading() {
-        print("Trying to cancel preload \(self). Do you forget to implement this?")
+        print("Trying to cancel preload \(self). Did you forget to implement this?")
     }
 }
 

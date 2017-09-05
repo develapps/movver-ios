@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Movver'
-  s.version          = '3.0.5'
+  s.version          = '3.1.0'
   s.summary          = 'An implementation of MOVVER protocol with some helpers.'
 
 # This description is used to generate tags and improve search results.

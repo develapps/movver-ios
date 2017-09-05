@@ -63,20 +63,20 @@ extension Router: RouterProtocol{
 	func showCollection()
 	{
 		var newRouter = CollectionRouter()
-		let vc:ViewController = newRouter.movver_VC_Instantiate(model: nil,
+		let vc:CollectionViewController = newRouter.movver_VC_Instantiate(model: nil,
 		                                                          viewModelClass: CollectionViewModel.self,
 		                                                          storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
-		                                                          identifier: "CollectionViewController",
+		                                                          identifier: String(describing:CollectionViewController.self),
 		                                                          previousRouter: self)
 
 		self.mv_view().navigationController?.pushViewController(vc, animated: true)
 	}
 	func showTableView(){
 		var newRouter = TableRouter()
-		let vc:ViewController = newRouter.movver_VC_Instantiate(model: nil,
+		let vc:TableViewController = newRouter.movver_VC_Instantiate(model: nil,
 		                                                        viewModelClass: TableViewModel.self,
 		                                                        storyboard: UIStoryboard(name: "Main", bundle: Bundle.main),
-		                                                        identifier: "TableViewController",
+		                                                        identifier: String(describing:TableViewController.self),
 		                                                        previousRouter: self)
 		self.mv_view().navigationController?.pushViewController(vc, animated: true)
 	}
